@@ -1,0 +1,250 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Exo+2:400,500,700&display=swap);
+@import url(https://use.fontawesome.com/releases/v5.1.0/css/all.css);
+* {
+    margin: 0;
+    padding: 0;
+    transition: all .3s;
+    outline: 0;
+    box-sizing: border-box!important;
+}
+a{
+    text-decoration: none;
+}
+
+.headerbar{
+    height: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+.captitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 36px;
+}
+.capuser{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0 75px 0;
+    height: 150px;
+}
+.capuser .left{
+    position: absolute;
+    margin-right: 222px;
+    justify-content: left;
+}
+.capuser .right{
+    position: absolute;
+    margin-left: 250px;
+    justify-content: right;
+}
+.capuser .central{
+    position: absolute;
+    z-index: 10;
+}
+.capuser a{
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+}
+.capuser a:hover{
+    margin: 12px 0;
+}
+.capuser .ballon{
+    background-color: #fff;
+    padding: 10px 16px;
+    border-radius: 4px;
+    color: #004890;
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+.capuser .right a{
+    justify-content: right;
+}
+.capuser .left .ballon{
+    box-shadow: -2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.capuser .ballon i{
+    margin-right: 4px;
+}
+.capuser .left a:after{
+    content: '\f0da';
+    font-family: FontAwesome;
+    color: #fff;
+    margin-left: -1px;
+    font-size: 24px;
+}
+.capuser .right .ballon{
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.capuser .right a:before{
+    content: '\f0d9';
+    font-family: FontAwesome;
+    color: #fff;
+    margin-right: -1px;
+    font-size: 24px;
+    z-index: 9;
+}
+h1#name{
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    width: 128px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+}
+.capmenu{
+    width: 100%;
+    height: 80px;
+    background: #031130;
+    float: left;
+    position: relative;
+    z-index: 20;
+    box-shadow: 0 3px 6px rgba(0,0,0,.3);
+}
+.capmenu ul li{
+	float: left;
+	height: 80px;
+	line-height: 82px;
+	box-shadow: inset 0 -4px 0 transparent, 2px 0 0 rgba(255, 255, 255, .1);
+	text-align: center;
+	width: 16.66%;
+	cursor: pointer;
+	position: relative;
+    list-style: none;
+}
+.capmenu ul li a .texto{
+	color: #fff;
+	font-size: 16px;
+	text-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+	font-weight: 700;
+	position: relative
+}
+.capmenu ul li.home{
+	box-shadow: inset 0 -4px 0 transparent, 2px 0 0 rgba(255, 255, 255, .1), -2px 0 0 rgba(255, 255, 255, .1)
+}
+.capmenu ul li a .texto .fas{
+	margin-right: 5px
+}
+.capmenu ul li:hover{
+	box-shadow: inset 0 -4px 0 #066dde, 2px 0 0 rgba(255, 255, 255, .1)
+}
+.capmenu ul li.home:hover{
+	box-shadow: inset 0 -4px 0 #066dde, 2px 0 0 rgba(255, 255, 255, .1), -2px 0 0 rgba(255, 255, 255, .1)
+}
+.capmenu ul li a .icon{
+	position: absolute;
+	opacity: .4;
+	transform: scale(.9);
+	filter: drop-shadow(-2px 0 0 transparent) drop-shadow(0 -2px 0 transparent) drop-shadow(2px 0 0 transparent) drop-shadow(0 2px 0 transparent) grayscale(1)
+}
+.capmenu ul li.home a .icon{
+	width: 43px;
+	height: 43px;
+	background: url(https://2.bp.blogspot.com/-dMCF43vqoJo/XK0oYvbiTKI/AAAAAAABOsg/AC1xrZtx0F4dz2XrpZOnofavHykeRTBEgCKgBGAs/s1600/Image%2B2181.png);
+	margin-top: 21px;
+	left: 50%;
+    margin-left: -18px;
+}
+.capmenu ul li.portal a .icon{
+	width: 28px;
+	height: 28px;
+	background: url(https://3.bp.blogspot.com/-6YdlxHV7VNI/XK0oYjrC0SI/AAAAAAABOsg/hjb-uvFmJ3Y4f4UKuA0f6wsrdkXxBLGCACKgBGAs/s1600/Image%2B1474.png);
+	margin-top: 26px;
+	left: 50%;
+    margin-left: -14px;
+}
+.capmenu ul li.listagens a .icon{
+	width: 32px;
+	height: 33px;
+	background: url(https://1.bp.blogspot.com/-bX9ZMfMBgqg/X7MoU6Yc7JI/AAAAAAABfRk/5Imi64p6JyMqWRgkSPZFr6hoB72jdWevACPcBGAsYHg/s0/1815__-2.png);
+	margin-top: 21px;
+	left: 50%;
+    margin-left: -14px;
+}
+.capmenu ul li.requerimento a .icon{
+	width: 29px;
+	height: 33px;
+	background: url(https://1.bp.blogspot.com/-bkt036pdJ3o/X7MoU-_ocnI/AAAAAAABfRk/si54cWWqhpgwrvFwDtwCwq79SmQ19JUwgCPcBGAsYHg/s0/2154__-06U.png);
+	margin-top: 21px;
+	left: 50%;
+    margin-left: -11px;
+}
+.capmenu ul li.documento a .icon{
+	width: 32px;
+	height: 35px;
+	background: url(https://1.bp.blogspot.com/-vVC46Yjuc7Y/X7MoU3dK7FI/AAAAAAABfRk/D0oBBODUfHgHtkTi7HrZkg6TCRHrEs9nwCPcBGAsYHg/s0/2330__-47B.png);
+	margin-top: 22px;
+	left: 50%;
+    margin-left: -18px;
+}
+.capmenu ul li.extra a .icon{
+	width: 25px;
+	height: 31px;
+	background: url(https://1.bp.blogspot.com/-M4onX9y3Oq4/XK0oYquVndI/AAAAAAABOsg/eGJZJqjH-a8TwXRopMjflAZeEtRqb3-jACKgBGAs/s1600/v24_2.gif);
+	margin-top: 23px;
+	left: 50%;
+    margin-left: -10.5px;
+}
+.capmenu ul li:hover a .icon{
+	opacity: 1;
+	transform: scale(1);
+	z-index: 1;
+	filter: drop-shadow(-2px 0 0 #066dde) drop-shadow(0 -2px 0 #066dde) drop-shadow(2px 0 0 #066dde) drop-shadow(0 2px 0 #066dde);
+}
+.capmenu ul li:hover a .texto{
+	opacity: .2
+}
+.capmenu ul li .submenu {
+	position: absolute;
+	background: #fff;
+	min-width: 220px;
+	width: auto;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	opacity: 0;
+	visibility: hidden;
+	margin-top: -2px;
+	left: 50%;
+        margin-left: -110px;
+	box-shadow: 0 5px 6px rgba(0, 0, 0, .1);
+	transform: rotateX(90deg);
+	transform-origin: top;
+	top: 82px
+}
+.capmenu ul li:hover .submenu {
+	opacity: 1;
+	visibility: visible;
+	transform: rotateX(0)
+}
+.capmenu ul li .submenu li {
+	float: none;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	padding: 8px;
+	cursor: pointer;
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .08);
+	min-width: 220px
+}
+.capmenu ul li .submenu li a {
+	text-align: center;
+	line-height: 0;
+	font-size: 13px;
+	font-weight: 400;
+	color: #000;
+	font-weight: 400
+}
+.capmenu ul li .submenu li:last-child {
+	border-radius: 0 0 5px 5px
+}
+.capmenu ul li .submenu li:hover {
+	box-shadow: none;
+	background: #0668d4
+}
+.capmenu ul li .submenu li:hover a {
+	color: #fff;
+	font-weight: 700
+}
