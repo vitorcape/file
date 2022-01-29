@@ -31,6 +31,17 @@ function Mod3() {
   h.append(style);
 }
 //]]>
+//<![CDATA[
+  function FAQ() {
+    var win = document.querySelector('iframe#faq').contentWindow,
+        css = document.querySelector('script[name="publi_css"]'),
+        h = win.document.querySelector('head'),
+        style = win.document.createElement('STYLE');
+    // Append the CSS inside the iframe
+    style.innerText = css.innerText;
+    h.append(style);
+  }
+  //]]>
 
 let bootstrapTheme = true;
 let head = document.getElementsByTagName('head')[0],  
