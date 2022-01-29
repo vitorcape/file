@@ -32,8 +32,8 @@ function Mod3() {
 }
 //]]>
 //<![CDATA[
-  function FAQ() {
-    var win = document.querySelector('iframe#faq').contentWindow,
+  function Mod4() {
+    var win = document.querySelector('iframe#Mod4').contentWindow,
         css = document.querySelector('script[name="publi_css"]'),
         h = win.document.querySelector('head'),
         style = win.document.createElement('STYLE');
