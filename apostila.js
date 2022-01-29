@@ -65,23 +65,3 @@ for ( var i =0; i<num; i = i++){
 head.removeChild(list[i]);
 
 }
-
-(function($) {
-    'use strict';
- 
-    $(function() {
- 
-      if (_userdata.session_logged_in == 0){
-      	window.location.replace("/");
-      }
- 
-    });
-}(jQuery));
-
-var link = document.querySelector("link[rel~='icon']");
-if (!link) {
-    link = document.createElement('link');
-    link.rel = 'icon';
-    document.getElementsByTagName('head')[0].appendChild(link);
-}
-link.href = 'https://i.imgur.com/TpVUAp7.png';
