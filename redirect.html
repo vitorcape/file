@@ -1,0 +1,130 @@
+<html lang="pt">
+    <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://imgur.com/TpVUAp7.png">
+        <link href="https://dphsystem.com.br/css/font-dphsystem.css" rel="stylesheet"/>
+        <link rel='stylesheet' id='mfn-fonts-css'  href='https://fonts.googleapis.com/css?family=Barlow%3A1%2C300%2C400%2C400italic%2C500%2C700%2C700italic%7CBarlow+Condensed%3A1%2C300%2C400%2C400italic%2C500%2C700%2C700italic&#038;display=swap&#038;ver=5.5.3' type='text/css' media='all' />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400%7CPoppins:500%2C800%7CPathway+Gothic+One:400" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/7957d4766d.js" crossorigin="anonymous"></script>
+        <meta name="language" content="pt">
+        <meta charset="utf-8">
+        <meta name="company" content="Centro Militar Investigativo">
+        <meta name="author" content="vcapelli">
+        <style>
+          body{
+          background-color: #fff
+          }
+          h1, h2{
+            font-family:Industry;
+            text-align: center;
+          margin-top: 7.5em;
+          text-transform: uppercase;
+          }
+          h2{
+              margin-top: .5em;
+              margin-bottom: 2.5em;
+              font-size: 20px;
+          }
+          i{
+          width: 100%;
+          text-align: center;
+          font-size: 100px;
+          }
+          .popup{
+              position: absolute;
+              top: 8px;
+              right: 12px;
+              z-index: 9;
+          }
+          .card{
+        font-family: 'Poppins';
+        background-color: #fff;
+        color: #000;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        width: auto;
+        margin: 16px 0;
+        padding-right: 16px;
+        border-radius: 6px;
+        box-shadow: rgba(0,0,0,.3) 0px 3px 5px!important;
+        }
+        .img{
+        position: absolute;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -150%);
+        }
+        .cmi{
+        position: absolute;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -15%);
+        }
+        .users{
+        left: 0;
+        height: 150px;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        }
+        </style>
+        <script>
+document.onkeydown = function(e) {
+    if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 ||    e.keyCode === 117 || e.keycode === 17 || e.keycode === 85)) {
+        alert('Não permitido!');
+    }
+    return false;
+};
+</script>
+          <script>
+          $(document).keydown(function(event){
+    if(event.keyCode==123){
+        return false;
+    }
+    else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+             return false;
+    }
+});
+
+$(document).on("contextmenu",function(e){        
+   e.preventDefault();
+});
+</script>
+      </head>
+      <body oncopy="return false" oncut="return false">
+        <div class="popup" style="display:none">
+            <div class="card"><img style="margin-top:29px" src="https://blet.cf/avatar/carlos555&action=std&direction=2&head_direction=3&img_format=png&gesture=sad&headonly=1&size=b&dance=0&frame_num=0&effect=">Perdeu tudo! Vivendo de aluguel!</div>
+            <div class="card"><img style="margin-top:29px" src="https://blet.cf/avatar/felipedh&action=std&direction=2&head_direction=3&img_format=png&gesture=sad&headonly=1&size=b&dance=0&frame_num=0&effect=">Morando debaixo da ponte!</div>
+            <div class="card"><img style="margin:16px" width="32" src="https://i.servimg.com/u/f76/20/24/24/93/backgr10.png">Acabou, morreu, perderam tudo!</div>
+        </div>
+        <div class="img">
+            <img src="https://imgur.com/vniVFKz.png">
+            <img src="https://imgur.com/J9V8Yj7.png">
+            <img src="https://imgur.com/TpVUAp7.png">
+        </div>
+        <h1>Caiu!</h1>
+        <h2>Aparentemente alguém passou por aqui..</h2>
+        <div class="users">
+            <img src="">
+            <img src="https://cdn.habblet.city/imaging/avatarimage?figure=hd-180-1.lg-285-64.ch-225-4000.ca-1813-63.hr-155-45.sh-300-110.cc-260-110.ha-61685620-93&action=std&direction=2&head_direction=2&img_format=png&gesture=std&headonly=0&size=l&dance=0&frame_num=0&effect=">
+        </div>
+      </body>
+      <script>
+if (document.addEventListener) {
+    document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+        return false;
+    });
+} else { //Versões antigas do IE
+    document.attachEvent("oncontextmenu", function(e) {
+        e = e || window.event;
+        e.returnValue = false;
+        return false;
+    });
+}
+</script>
+</html>
