@@ -4,8 +4,10 @@ $(document).ready(function(){
 });
 
 /* NOTIFICAÇÃO NAVBAR */
+var strg = $(".toread-message").text();
+var word_one = strg.split(' ')[0];
 var nova_mp = document.querySelector('a.mainmenu[href*="/privmsg?folder="] > #i_icon_mini_new_message');
 
 if (nova_mp) {
-  $('#nav_mp a').append('<span class="badge bg-danger">4</span>');
+  $('#nav_mp a').append('<span class="ms-2 fs-6 badge bg-danger">'+ word_one +'</span>');
 }
