@@ -11,3 +11,9 @@ var nova_mp = document.querySelector('a.mainmenu[href*="/privmsg?folder="] > #i_
 if (nova_mp) {
   $('#nav_mp a').append('<span class="ms-2 fs-6 badge bg-danger">'+ word_one +'</span>');
 }
+
+/* AVATAR USER */
+var strg = $("#user-name").text();
+var word_one = strg.split(' ')[0];
+
+$('div#user-avatar').append('<img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=png&user='+word_one+'&direction=2&head_direction=2&size=m&action=std">');
