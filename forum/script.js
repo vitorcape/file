@@ -16,4 +16,4 @@ if (nova_mp) {
 var strg = $("#user-name").text();
 var word_one = strg.split(' ')[0];
 
-$('div#user-avatar').append('<img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=png&user='+word_one+'&direction=2&head_direction=2&size=m&action=std">');
+$('div#user-avatar').append('<img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=png&user='+word_one+'&direction=2&head_direction=2&size=l&action=std">');
