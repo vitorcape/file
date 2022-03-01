@@ -13,7 +13,22 @@ if (nova_mp) {
 }
 
 /* AVATAR USER */
-var strg = $("#user-name").text();
-var word_one = strg.split(' ')[0];
-
-$('div#user-avatar').append('<img src="https://www.habbo.com.br/habbo-imaging/avatarimage?img_format=png&user='+word_one+'&direction=2&head_direction=2&size=l&action=std">');
+(function($) {
+ 
+    $(function() {
+ 
+        if (/^\/t(\d+)(p\d+-|-).*$/i.test(location.pathname)) {
+ 
+            $('.card').each(function() {
+                var $this = $(this);
+ 
+                var username = $this.find('#user-name').text();
+                var $img = $this.find('#user-avatar img');
+ 
+                $img.attr('src', 'http://www.habbo.com.br/habbo-imaging/avatarimage?user=' + username + '&direction=2&head_direction=2&size=l&action=std');
+            });
+        }
+ 
+ 
+    });
+}(jQuery));
