@@ -12,7 +12,7 @@ if (nova_mp) {
   $('#nav_mp a').append('<span class="ms-2 fs-6 badge bg-danger">'+ word_one +'</span>');
 }
 
-/* AVATAR USER */
+/* AVATAR USUÁRIO */
 (function($) {
  
     $(function() {
@@ -32,3 +32,9 @@ if (nova_mp) {
  
     });
 }(jQuery));
+
+/* TOOLTIP BOOTSTRAP */
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
