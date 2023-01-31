@@ -2,11 +2,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="vcapelli">
-        <title>Snippet - BBBootstrap</title>
+        <meta name="company" content="Polícia Centro Tático Revolucionário">
+    	<meta name="author" content="vcapelli">
+        <title>CTR: Corregedoria</title>
+        <link rel="icon" type="image/png" href="https://i.servimg.com/u/f35/20/00/39/32/oie_tr16.png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
-        <link href="https://vitorcape.github.io/file/dip/style.css" rel="stylesheet">
+        <link href="https://cmihb.github.io/system/cor/style.css" rel="stylesheet">
         <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -30,6 +32,9 @@
                 color: #fff;
                 border-radius: 0.35em;
             }
+            .fs-85{
+                font-size: .85rem;
+            }
         </style>
         <style>header, .footer, #header-banner, #notif-menu, #main-user-menu, .avatartop{display:none}</style>
     </head>
@@ -39,15 +44,15 @@
                 <i class="bx bx-menu" id="header-toggle"></i>
             </div>
             <div class="header_title">
-                <span>Polícia CMI</span>
+                <span>Polícia CTR</span>
             </div>
         </header>
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
                 <div>
                     <a class="nav_logo">
-                        <i class="bx bx-layer nav_logo-icon"></i>
-                        <span class="nav_logo-name">DIP</span>
+                        <i class="fas fa-gavel nav_logo-icon"></i>
+                        <span class="nav_logo-name">CORREGEDORIA</span>
                     </a>
                     <div class="nav_list">
                         <a href="javascript:void(0)" class="nav_link active" id="dashboard">
@@ -62,21 +67,21 @@
                             <i class="bx bx-calendar-alt nav_icon"></i>
                             <span class="nav_name">Calendário</span>
                         </a>
-                        <a href="javascript:void(0)" class="nav_link">
-                            <i class="bx bx-book-alt nav_icon"></i>
-                            <span class="nav_name">Script's</span>
+                        <a href="javascript:void(0)" class="nav_link" id="lista">
+                            <i class="bx bx-group nav_icon"></i>
+                            <span class="nav_name">Corregedores</span>
                         </a>
-                        <a href="javascript:void(0)" class="nav_link">
-                            <i class="bx bx-bookmark nav_icon" id="document"></i>
-                            <span class="nav_name">Documentação</span>
+                        <a href="javascript:void(0)" class="nav_link" id="distin">
+                            <i class="bx bxs-shield nav_icon" id="document"></i>
+                            <span class="nav_name">Distintivos</span>
                         </a>
                         <a href="javascript:void(0)" class="nav_link" id="announcement">
                             <i class="bx bxs-megaphone nav_icon"></i>
-                            <span class="nav_name">Diário Oficial</span>
+                            <span class="nav_name">Anúncios</span>
                         </a>
                     </div>
                 </div>
-                <a href="#" class="nav_link">
+              <a href="/" class="nav_link">
                     <i class="bx bx-log-out nav_icon"></i>
                     <span class="nav_name">Voltar fórum</span>
                 </a>
@@ -91,25 +96,7 @@
                     <p class="text-muted">Bem-vindo ao sistema da Corregedoria Militar</p>
                 </div>
             </div>
-            <div class="card-group script">
-                <a href="">
-                    <div class="card card-cape shadow-sm">
-                        <h6>Envio de propostas</h6>
-                        <h4><i class="fas fa-edit"></i></h4>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="card card-cape shadow-sm">
-                        <h6>Diário Oficial</h6>
-                        <h4><i class="fas fa-file-alt"></i></h4>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="card card-cape shadow-sm">
-                        <h6>Ouvidoria</h6>
-                        <h4><i class="fas fa-phone-alt"></i></h4>
-                    </div>
-                </a>
+            <div class="card-group script" id="link">
             </div>
         </section>
         <main class="container">
@@ -144,6 +131,9 @@
                     <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
                     <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
                     <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">6</a></li>
                 </ul>
             </nav>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center" id="projetos">
@@ -178,12 +168,34 @@
         </main>
     </div>
     <!--Calendario Main end-->
-    <!--Documentos Main start-->
-    <div class="height-100" id="i_document" style="display:none">
-        <section class="py-5 text-center container">
+    <!--Corregedores Main start-->
+    <div class="height-100" id="i_lista" style="display:none">
+        <section class="container text-center">
             <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">DOCUMENTAÇÃO</h1>
+                <div class="py-5 col-lg-6 col-md-8 mx-auto mb-4">
+                    <h1 class="fw-light">CORREGEDORES</h1>
+                </div>
+                <div class="container">
+                    <div class="card mb-3">
+                        <div class="card-body" id="pres">
+                            <h4 class="card-title">Presidente</h4>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body" id="cons">
+                            <h4 class="card-title">Conselheiros</h4>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body" id="cor">
+                            <h4 class="card-title">Corregedores</h4>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body" id="cori">
+                            <h4 class="card-title">Corregedores-Interino</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -192,7 +204,35 @@
             </div>
         </main>
     </div>
-    <!--Documentos Main end-->
+    <!--Corregedores Main end-->
+    <!--Distintivos Main start-->
+    <div class="height-100 p-3" id="i_distin" style="display:none">
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">DISTINTIVOS</h1>
+                </div>
+            </div>
+        </section>
+        <main class="container">
+            <div class="card mb-3">
+                <div class="card-body" id="dis3">
+                    <h4 class="card-title text-center">Dinstitvo 3</h4>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body" id="dis2">
+                    <h4 class="card-title text-center">Dinstitvo 2</h4>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body" id="dis1">
+                    <h4 class="card-title text-center">Distintivo 1</h4>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!--Distintivos Main end-->
     <!--Anúncios Main start-->
     <div class="height-100" id="i_announcement" style="display:none">
         <section class="py-5 text-center container">
@@ -209,45 +249,58 @@
     </div>
     <!--Anúncios Main end-->
     <!--Javascript-->
-    <!--JS: Páginas start-->
+    <!--JS: Páginas-->
     <script>
         $("#dashboard").click(function () {
             $("#i_dashboard").css("display","block");
             $("#i_project").css("display","none");
             $("#i_calendar").css("display","none");
-            $("#i_document").css("display","none");
+            $("#i_lista").css("display","none");
             $("#i_announcement").css("display","none");
+            $("#i_distin").css("display","none");
         });
         $("#project").click(function () {
             $("#i_dashboard").css("display","none");
             $("#i_calendar").css("display","none");
             $("#i_project").css("display","block");
-            $("#i_document").css("display","none");
+            $("#i_lista").css("display","none");
             $("#i_announcement").css("display","none");
+            $("#i_distin").css("display","none");
         });
         $("#calendar").click(function () {
             $("#i_dashboard").css("display","none");
             $("#i_calendar").css("display","block");
             $("#i_project").css("display","none");
-            $("#i_document").css("display","none");
+            $("#i_lista").css("display","none");
             $("#i_announcement").css("display","none");
+            $("#i_distin").css("display","none");
         });
         $("#announcement").click(function () {
             $("#i_dashboard").css("display","none");
             $("#i_calendar").css("display","none");
             $("#i_project").css("display","none");
-            $("#i_document").css("display","none");
+            $("#i_lista").css("display","none");
             $("#i_announcement").css("display","block");
+            $("#i_distin").css("display","none");
         });
-        $("#document").click(function () {
+        $("#lista").click(function () {
             $("#i_dashboard").css("display","none");
             $("#i_calendar").css("display","none");
             $("#i_project").css("display","none");
             $("#i_announcement").css("display","none");
-            $("#i_document").css("display","block");
+            $("#i_lista").css("display","block");
+            $("#i_distin").css("display","none");
+        });
+        $("#distin").click(function () {
+            $("#i_dashboard").css("display","none");
+            $("#i_calendar").css("display","none");
+            $("#i_project").css("display","none");
+            $("#i_announcement").css("display","none");
+            $("#i_lista").css("display","none");
+            $("#i_distin").css("display","block");
         });
     </script>
-    <!--JS: Páginas end-->
+    <!--Projetos-->
     <script>
         var dados = [];
         $(document).ready(function(){
@@ -289,6 +342,7 @@
         showPage(parseInt($(this).text())) 
         });
     </script>
+    <!--Calendário-->
     <script>
         var dados = [];
         $(document).ready(function(){
@@ -306,6 +360,7 @@
             })
         })
     </script>
+    <!--Página Inicial-->
     <script>
         var dados = [];
         $(document).ready(function(){
@@ -325,6 +380,23 @@
     <script>
         var dados = [];
         $(document).ready(function(){
+            fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Links')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(row => {
+                    dados.push([row['URL'],row['TÍTULO'],row['CONTEÚDO']]);
+                    $("#link").append('<a href="'+row['URL']+'"><div class="card card-cape shadow-sm" style="width: 18rem;">' +
+                                       '<h6>'+row['TÍTULO']+'</h6>' +
+                                       '<h4>'+row['CONTEÚDO']+'</h4>' +
+                                       '</div></a>');
+                });
+            })
+        })
+    </script>
+    <!--Anúncios-->
+    <script>
+        var dados = [];
+        $(document).ready(function(){
             fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Anúncios')
             .then(res => res.json())
             .then(data => {
@@ -332,7 +404,7 @@
                     dados.push([row['NICKNAME'],row['CARGO'],row['TÍTULO'],row['DESCRIÇÃO']]);
                     $("#anuncios").append('<div class="card mb-3 w-100"><div class="row g-0"><div class="col-md-2">' +
                         '<img src="http://api.habblet.city/avatar/'+ row['NICKNAME'] +'&action=std&direction=2&head_direction=2&img_format=png&gesture=std&headonly=0&size=b&dance=0&frame_num=0&effect=" class="img-fluid rounded-start" alt="'+ row['NICKNAME'] +'">' +
-                        '<hr><h4>'+ row['NICKNAME'] +'</h4><h6>'+ row['CARGO'] +'</h6>' +
+                        '<hr><h4>'+ row['NICKNAME'] +'</h4><h6 class="pb-3">'+ row['CARGO'] +'</h6>' +
                         '</div><div class="col-md-10"><div class="card-body">' +
                         '<h5 class="card-title mb-3 text-start">'+ row['TÍTULO'] +'</h5>' +
                         '<p class="card-text text-start">'+ row['DESCRIÇÃO'] +'</p>' +
@@ -341,14 +413,64 @@
             })
         })
     </script>
+    <!--Corregedores-->
     <script>
-        if(_userdata["session_logged_in"] == 0){
-            window.location.replace("/");
-        }
-      </script>
+        var dados = [];
+        $(document).ready(function(){
+            fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Corregedores')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(function (element, index) {
+                    if(element['CARGO'] === 'Presidente'){
+                        $("#pres").append("<h6 class='text-start fw-bolder mb-0'>"+element['NICK']+"</h6>",
+                                          "<p class='text-start fs-85 fst-italic'>"+element['FUNÇÃO']+"</p>");
+                    }
+                });
+                data.forEach(function (element, index) {
+                    if(element['CARGO'] === 'Conselheiro'){
+                        $("#cons").append("<h6 class='text-start fw-bolder mb-0'>"+element['NICK']+"</h6>",
+                                          "<p class='text-start fs-85 fst-italic'>"+element['FUNÇÃO']+"</p>");
+                    }
+                });
+                data.forEach(function (element, index) {
+                    if(element['CARGO'] === 'Corregedor'){
+                        $("#cor").append("<h6 class='text-start fw-bolder mb-0'>"+element['NICK']+"</h6>",
+                                          "<p class='text-start fs-85 fst-italic'>"+element['FUNÇÃO']+"</p>");
+                    }
+                });
+                data.forEach(function (element, index) {
+                    if(element['CARGO'] === 'Corregedor-Interino'){
+                        $("#cori").append("<h6 class='text-start fw-bolder mb-0'>"+element['NICK']+"</h6>",
+                                          "<p class='text-start fs-85 fst-italic'>"+element['FUNÇÃO']+"</p>");
+                    }
+                });
+            })
+        })
+    </script>
+    <!--Distintivos-->
     <script>
-      $("link[href='/109-ltr.css']").remove();
-      $("#wrap > div:first-child").remove();
+        var dados = [];
+        $(document).ready(function(){
+            fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Distintivos')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(function (element, index) {
+                    if(element['DISTINTIVO'] === '3'){
+                        $("#dis3").append("<p class='text-start'>"+element['NICK']+"</p>");
+                    }
+                });
+                data.forEach(function (element, index) {
+                    if(element['DISTINTIVO'] === '2'){
+                        $("#dis2").append("<p class='text-start'>"+element['NICK']+"</p>");
+                    }
+                });
+                data.forEach(function (element, index) {
+                    if(element['DISTINTIVO'] === '1'){
+                        $("#dis1").append("<p class='text-start'>"+element['NICK']+"</p>");
+                    }
+                });
+            })
+        })
     </script>
     <script src="https://vitorcape.github.io/file/dip/script.js"></script>
    </body>
