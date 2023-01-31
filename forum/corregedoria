@@ -1,0 +1,477 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="company" content="Centro Militar Investigativo">
+    	<meta name="author" content="vcapelli">
+        <title>CMI: Corregedoria</title>
+        <link rel="icon" type="image/png" href="https://i.servimg.com/u/f35/20/00/39/32/oie_tr16.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+        <link href="https://cmihb.github.io/system/cor/style.css" rel="stylesheet">
+        <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <style>
+            #calendario thead {
+                background-color: var(--bs-table-hover-color);
+                color: #fff;
+                font-family: Poppins, sans-serif;
+            }
+            #calendario tbody{
+                text-align: center;
+            }
+            .icon{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 32px;
+                min-width: 32px;
+                margin-right: 1em;
+                color: #fff;
+                border-radius: 0.35em;
+            }
+            .fs-85{
+                font-size: .85rem;
+            }
+        </style>
+        <style>header, .footer, #header-banner, #notif-menu, #main-user-menu, .avatartop{display:none}</style>
+    </head>
+    <body id="body-pd" class="bg-light">
+        <header class="header" id="header">
+            <div class="header_toggle">
+                <i class="bx bx-menu" id="header-toggle"></i>
+            </div>
+            <div class="header_title">
+                <span>Polícia CMI</span>
+            </div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <a class="nav_logo">
+                        <i class="fas fa-gavel nav_logo-icon"></i>
+                        <span class="nav_logo-name">CORREGEDORIA</span>
+                    </a>
+                    <div class="nav_list">
+                        <a href="javascript:void(0)" class="nav_link active" id="dashboard">
+                            <i class="bx bx-grid-alt nav_icon"></i>
+                            <span class="nav_name">Dashboard</span>
+                        </a>
+                        <a href="javascript:void(0)" class="nav_link" id="project">
+                            <i class="bx bx-file-find nav_icon"></i>
+                            <span class="nav_name">Projetos</span>
+                        </a>
+                        <a href="javascript:void(0)" class="nav_link" id="calendar">
+                            <i class="bx bx-calendar-alt nav_icon"></i>
+                            <span class="nav_name">Calendário</span>
+                        </a>
+                        <a href="javascript:void(0)" class="nav_link" id="lista">
+                            <i class="bx bx-group nav_icon"></i>
+                            <span class="nav_name">Corregedores</span>
+                        </a>
+                        <a href="javascript:void(0)" class="nav_link" id="distin">
+                            <i class="bx bxs-shield nav_icon" id="document"></i>
+                            <span class="nav_name">Distintivos</span>
+                        </a>
+                        <a href="javascript:void(0)" class="nav_link" id="announcement">
+                            <i class="bx bxs-megaphone nav_icon"></i>
+                            <span class="nav_name">Anúncios</span>
+                        </a>
+                    </div>
+                </div>
+              <a href="/" class="nav_link">
+                    <i class="bx bx-log-out nav_icon"></i>
+                    <span class="nav_name">Voltar fórum</span>
+                </a>
+            </nav>
+        </div>
+    <!--Container Main start-->
+    <div class="height-100" id="i_dashboard">
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Corregedoria</h1>
+                    <p class="text-muted">Bem-vindo ao sistema da Corregedoria Militar</p>
+                </div>
+            </div>
+            <div class="card-group script" id="link">
+            </div>
+        </section>
+        <main class="container">
+            <div class="my-3 p-3 bg-body rounded shadow-sm border" id="update">
+                <h6 class="border-bottom pb-2 mb-0">Recentes atualizações</h6>
+              </div>
+        </main>
+        <!--Footer-->
+        <main class="flex-shrink-0 pb-2 pt-5" id="footer">
+            <div class="container">
+                <p class="lead"><i class='bx bx-code-alt'></i> Desenvolvido por vcapelli</p>
+                <p>Todos os direitos reservados à <a href="https://www.policiacmi.com">Polícia CMI</a>.</p>
+            </div>
+        </main>
+    </div>
+    <!--Container Main end-->
+    <!--Projetos Main start-->
+    <div class="height-100" id="i_project" style="display:none">
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">PROJETOS</h1>
+                </div>
+            </div>
+        </section>
+        <main class="container">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center" id="pagin">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Navegar pelas páginas</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">6</a></li>
+                </ul>
+            </nav>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center" id="projetos">
+            </div>
+        </main>
+    </div>
+    <!--Projetos Main end-->
+    <!--Calendario Main start-->
+    <div class="height-100" id="i_calendar" style="display:none">
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">CALENDÁRIO</h1>
+                </div>
+            </div>
+        </section>
+        <main class="container">
+            <div class="my-3 p-3 bg-body rounded shadow-sm border">
+                <table class="table" id="calendario">
+                    <thead class="rounded-top text-center text-uppercase fs-5">
+                        <tr>
+                            <th scope="col">Responsável</th>
+                            <th scope="col">Destinação</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Horário</th>
+                            <th scope="col">Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <!--Calendario Main end-->
+    <!--Corregedores Main start-->
+    <div class="height-100" id="i_lista" style="display:none">
+        <section class="container text-center">
+            <div class="row py-lg-5">
+                <div class="py-5 col-lg-6 col-md-8 mx-auto mb-4">
+                    <h1 class="fw-light">CORREGEDORES</h1>
+                </div>
+                <div class="container">
+                    <div class="card mb-3">
+                        <div class="card-body" id="pres">
+                            <h4 class="card-title">Presidente</h4>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body" id="cons">
+                            <h4 class="card-title">Conselheiros</h4>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body" id="cor">
+                            <h4 class="card-title">Corregedores</h4>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body" id="cori">
+                            <h4 class="card-title">Corregedores-Interino</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <main class="container">
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            </div>
+        </main>
+    </div>
+    <!--Corregedores Main end-->
+    <!--Distintivos Main start-->
+    <div class="height-100 p-3" id="i_distin" style="display:none">
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">DISTINTIVOS</h1>
+                </div>
+            </div>
+        </section>
+        <main class="container">
+            <div class="card mb-3">
+                <div class="card-body" id="dis3">
+                    <h4 class="card-title text-center">Dinstitvo 3</h4>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body" id="dis2">
+                    <h4 class="card-title text-center">Dinstitvo 2</h4>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body" id="dis1">
+                    <h4 class="card-title text-center">Distintivo 1</h4>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!--Distintivos Main end-->
+    <!--Anúncios Main start-->
+    <div class="height-100" id="i_announcement" style="display:none">
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">ANÚNCIOS</h1>
+                </div>
+            </div>
+        </section>
+        <main class="container">
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center" id="anuncios">
+            </div>
+        </main>
+    </div>
+    <!--Anúncios Main end-->
+    <!--Javascript-->
+    <!--JS: Páginas-->
+    <script>
+        $("#dashboard").click(function () {
+            $("#i_dashboard").css("display","block");
+            $("#i_project").css("display","none");
+            $("#i_calendar").css("display","none");
+            $("#i_lista").css("display","none");
+            $("#i_announcement").css("display","none");
+            $("#i_distin").css("display","none");
+        });
+        $("#project").click(function () {
+            $("#i_dashboard").css("display","none");
+            $("#i_calendar").css("display","none");
+            $("#i_project").css("display","block");
+            $("#i_lista").css("display","none");
+            $("#i_announcement").css("display","none");
+            $("#i_distin").css("display","none");
+        });
+        $("#calendar").click(function () {
+            $("#i_dashboard").css("display","none");
+            $("#i_calendar").css("display","block");
+            $("#i_project").css("display","none");
+            $("#i_lista").css("display","none");
+            $("#i_announcement").css("display","none");
+            $("#i_distin").css("display","none");
+        });
+        $("#announcement").click(function () {
+            $("#i_dashboard").css("display","none");
+            $("#i_calendar").css("display","none");
+            $("#i_project").css("display","none");
+            $("#i_lista").css("display","none");
+            $("#i_announcement").css("display","block");
+            $("#i_distin").css("display","none");
+        });
+        $("#lista").click(function () {
+            $("#i_dashboard").css("display","none");
+            $("#i_calendar").css("display","none");
+            $("#i_project").css("display","none");
+            $("#i_announcement").css("display","none");
+            $("#i_lista").css("display","block");
+            $("#i_distin").css("display","none");
+        });
+        $("#distin").click(function () {
+            $("#i_dashboard").css("display","none");
+            $("#i_calendar").css("display","none");
+            $("#i_project").css("display","none");
+            $("#i_announcement").css("display","none");
+            $("#i_lista").css("display","none");
+            $("#i_distin").css("display","block");
+        });
+    </script>
+    <!--Projetos-->
+    <script>
+        var dados = [];
+        $(document).ready(function(){
+            fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Projetos')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(row => {
+                    dados.push([row['DATA'],row['ORDEM'],row['RESPONSÁVEL'],row['CLASSIFICAÇÃO'],row['TEMA'],row['SITUAÇÃO']]);
+                    $("#projetos").append('<div class="col"><div class="card mb-4 rounded-3 shadow-sm"><div class="card-header py-3">' +
+                        '<h4 class="my-0 fw-normal">' + row['CLASSIFICAÇÃO'] + ' - ' + row['ORDEM'] + '</h4></div>' +
+                        '<div class="card-body"><h1 class="card-title pricing-card-title">' +
+                        '<img src="http://api.habblet.city/avatar/' + row['RESPONSÁVEL'] + '&action=std&direction=2&head_direction=2&img_format=png&gesture=std&headonly=0&size=b&dance=0&frame_num=0&effect="></h1><hr>' +
+                        '<ul class="list-unstyled mt-3 text-start">' +
+                        '<li>Responsável: '+ row['RESPONSÁVEL'] +'</li>' +
+                        '<li>Data: '+ row['DATA'] +'</li>' +
+                        '<li>Tema: '+ row['TEMA'] +'</li>' +
+                        '<li>Situação: '+ row['SITUAÇÃO'] +'</li>' +
+                        '</ul></div></div></div>');
+                });
+            })
+        })
+    </script>
+    <script>
+        pageSize = 6;
+
+        showPage = function(page) {
+        $("#projetos .card").hide();
+        $("#projetos .card").each(function(n) {
+            if (n >= pageSize * (page - 1) && n < pageSize * page)
+                $(this).show();
+            });        
+        }
+    
+        showPage(1);
+
+        $("#pagin li a").click(function() {
+        $("#pagin li a").removeClass("current");
+        $(this).addClass("current");
+        showPage(parseInt($(this).text())) 
+        });
+    </script>
+    <!--Calendário-->
+    <script>
+        var dados = [];
+        $(document).ready(function(){
+            fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Calendario')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(row => {
+                    dados.push([row['RESPONSÁVEL'],row['DESTINAÇÃO'],row['DATA'],row['HORÁRIO'],row['DESCRIÇÃO']]);
+                    $("#calendario tbody").append('<tr><td class="responsavel">' + row['RESPONSÁVEL'] +
+                                       '</td><td class="destino_atv">' + row['DESTINAÇÃO'] +
+                                       '</td><td class="data_atv">' + row['DATA'] +
+                                       '</td><td class="horario_atv">' + row['HORÁRIO'] +
+                                       '</td><td class="assunto_atv">' + row['DESCRIÇÃO'] +'</td></tr>');
+                });
+            })
+        })
+    </script>
+    <!--Página Inicial-->
+    <script>
+        var dados = [];
+        $(document).ready(function(){
+            fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Atualização')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(row => {
+                    dados.push([row['ICONE'],row['COR'],row['NICKNAME'],row['ATUALIZAÇÃO']]);
+                    $("#update").append('<div class="d-flex text-muted pt-3 border-bottom">' +
+                                       '<div class="icon" style="background-color:#'+ row['COR'] +'"><i class="fas fa-'+ row['ICONE'] +'"></i></div>' +
+                                       '<p class="pb-3 mb-0 small lh-sm">' +
+                                       '<strong class="d-block text-gray-dark">'+ row['NICKNAME'] +'</strong>' + row['ATUALIZAÇÃO'] + '</p></div>');
+                });
+            })
+        })
+    </script>
+    <script>
+        var dados = [];
+        $(document).ready(function(){
+            fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Links')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(row => {
+                    dados.push([row['URL'],row['TÍTULO'],row['CONTEÚDO']]);
+                    $("#link").append('<a href="'+row['URL']+'"><div class="card card-cape shadow-sm" style="width: 18rem;">' +
+                                       '<h6>'+row['TÍTULO']+'</h6>' +
+                                       '<h4>'+row['CONTEÚDO']+'</h4>' +
+                                       '</div></a>');
+                });
+            })
+        })
+    </script>
+    <!--Anúncios-->
+    <script>
+        var dados = [];
+        $(document).ready(function(){
+            fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Anúncios')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(row => {
+                    dados.push([row['NICKNAME'],row['CARGO'],row['TÍTULO'],row['DESCRIÇÃO']]);
+                    $("#anuncios").append('<div class="card mb-3 w-100"><div class="row g-0"><div class="col-md-2">' +
+                        '<img src="http://api.habblet.city/avatar/'+ row['NICKNAME'] +'&action=std&direction=2&head_direction=2&img_format=png&gesture=std&headonly=0&size=b&dance=0&frame_num=0&effect=" class="img-fluid rounded-start" alt="'+ row['NICKNAME'] +'">' +
+                        '<hr><h4>'+ row['NICKNAME'] +'</h4><h6 class="pb-3">'+ row['CARGO'] +'</h6>' +
+                        '</div><div class="col-md-10"><div class="card-body">' +
+                        '<h5 class="card-title mb-3 text-start">'+ row['TÍTULO'] +'</h5>' +
+                        '<p class="card-text text-start">'+ row['DESCRIÇÃO'] +'</p>' +
+                        '</div></div></div></div>');
+                });
+            })
+        })
+    </script>
+    <!--Corregedores-->
+    <script>
+        var dados = [];
+        $(document).ready(function(){
+            fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Corregedores')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(function (element, index) {
+                    if(element['CARGO'] === 'Presidente'){
+                        $("#pres").append("<h6 class='text-start fw-bolder mb-0'>"+element['NICK']+"</h6>",
+                                          "<p class='text-start fs-85 fst-italic'>"+element['FUNÇÃO']+"</p>");
+                    }
+                });
+                data.forEach(function (element, index) {
+                    if(element['CARGO'] === 'Conselheiro'){
+                        $("#cons").append("<h6 class='text-start fw-bolder mb-0'>"+element['NICK']+"</h6>",
+                                          "<p class='text-start fs-85 fst-italic'>"+element['FUNÇÃO']+"</p>");
+                    }
+                });
+                data.forEach(function (element, index) {
+                    if(element['CARGO'] === 'Corregedor'){
+                        $("#cor").append("<h6 class='text-start fw-bolder mb-0'>"+element['NICK']+"</h6>",
+                                          "<p class='text-start fs-85 fst-italic'>"+element['FUNÇÃO']+"</p>");
+                    }
+                });
+                data.forEach(function (element, index) {
+                    if(element['CARGO'] === 'Corregedor-Interino'){
+                        $("#cori").append("<h6 class='text-start fw-bolder mb-0'>"+element['NICK']+"</h6>",
+                                          "<p class='text-start fs-85 fst-italic'>"+element['FUNÇÃO']+"</p>");
+                    }
+                });
+            })
+        })
+    </script>
+    <!--Distintivos-->
+    <script>
+        var dados = [];
+        $(document).ready(function(){
+            fetch('https://opensheet.elk.sh/1v2WMBS_UDt37nb0_h1fpq0CR_q8yg3md-kbthwzgyyc/Distintivos')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(function (element, index) {
+                    if(element['DISTINTIVO'] === '3'){
+                        $("#dis3").append("<p class='text-start'>"+element['NICK']+"</p>");
+                    }
+                });
+                data.forEach(function (element, index) {
+                    if(element['DISTINTIVO'] === '2'){
+                        $("#dis2").append("<p class='text-start'>"+element['NICK']+"</p>");
+                    }
+                });
+                data.forEach(function (element, index) {
+                    if(element['DISTINTIVO'] === '1'){
+                        $("#dis1").append("<p class='text-start'>"+element['NICK']+"</p>");
+                    }
+                });
+            })
+        })
+    </script>
+    <script src="https://vitorcape.github.io/file/dip/script.js"></script>
+   </body>
+</html>
