@@ -1,0 +1,1142 @@
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projetos & Sugestões</title>
+        <link rel="icon" href="https://www.habbo.com.br/habbo-imaging/badge/b09064s43131s50134s17113s171153f3edc7f555be912c2392e285b05bd34.gif">
+    <link rel="stylesheet" href="css.css">
+    <meta name="viewport" content="width=device-width, initial-scales=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+:root{
+    --font-tittle: 70px;
+    --font-32px: 32px;
+    --font-26px: 26px;
+    --font-24px: 24px;
+    --font-22px: 22px;
+    --font-20px: 20px;
+    --font-18px: 18px;
+    --font-16px: 16px;
+
+    --card-premiados-largura: 40%;
+    --font-blue-color: #014aad;
+    --superior-tittle: #22264f;
+    --card-tittle: #292e61;
+    --card-background: #d6daff;
+    --tittle-color: #e3e3e3;
+}
+*,::before,::after{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: none;
+    justify-content: center;
+    align-items: start;
+}
+.text_content{
+    position: relative;
+    transition: all 0.5s ease;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.container{
+    margin: 0 auto;
+    display: block;
+}
+.container_description{
+    max-width: 1450px;
+    width: 90vw;
+    margin: 0 auto;
+    display: block;
+}
+.container .main_tittle{
+    border-radius: 5px;
+    border: var(--border);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container .main_tittle .tittle_header{
+    width: 100%;
+    font-size: var(--font-tittle);
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--card-tittle);
+    color: var(--tittle-color);
+    display: flex;
+    padding: 3vw 1vw;
+}
+.container .main_tittle .tittle_header span{
+    padding: 5px 0;
+}
+.container .main_tittle .tittle_description{
+    text-align: center;
+    margin: 20px 0;
+    font-size: var(--font-18px);
+    width: 100%;
+}
+.container .main_tittle .card_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+hr{
+    color: var(--container-color);
+    width: 80%;
+    margin-top: 0;
+}
+@media (max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+    form .details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .container form .details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .details::-webkit-scrollbar{
+        width: 100%;
+    }
+}
+.active{
+    opacity: 0.3;
+}
+.active_bd{
+    overflow: hidden;
+}
+.hid{
+    display: none;
+}
+.container .tittle{
+    font-size: 3vh;
+    font-weight: 600;
+    text-align: center;
+    color: #3b3b3b;
+}
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 30px white inset;
+    box-shadow: #fff;
+}
+::selection{
+    background: var(--superior-tittle);
+    color: #fff;
+}
+/* FOOTER */
+footer{
+    width: 100%;
+    background-color: var(--container-color);
+    color: #fff;
+}
+.footer_header{
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.footer_center{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.footer_header .header_tittle{
+    width: auto;
+    display: inline-block;
+    padding-bottom: 20px;
+    font-size: var(--font-24px);
+}
+.footer_header .btn_hd{
+    display: inline-block;
+    cursor: pointer;
+    background-color: #2e2e2e;
+    padding: 5px;
+    border-radius: 5px;
+    width: 20%;
+    font-size: var(--font-16px);
+}
+.footer_header .btn_hd:hover{
+    background-color: 666666;
+}
+.footer_header .btn_hd i{
+    display: block;
+    margin: 0;
+}
+.footer_header .btn_hd .nav_name{
+    margin: auto;
+}
+.footer_base{
+    font-size: var(--font-16px);
+    padding: 20px;
+    background-color: #292929;
+    text-align: center;
+}
+.footer_base .developed .nav_name, .footer_base .developed .nav_icon{
+    font-size: var(--font-16px);
+}
+@media screen and (max-width: 650px) {
+    .footer_header .btn_hd{
+        width: 30%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .footer_header .btn_hd{
+        width: 31%;
+    }
+}
+
+.container .card{
+    border: var(--border);
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color: #dee1fc;
+    width: calc(100%/3 - 6px);
+    min-width: 170px;
+    overflow: hidden;
+    margin: 10px auto 0 auto;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.container .card .tittle{
+    display: inline-block;
+    background: var(--first-color-ligth);
+    color: var(--tittle-color);
+    padding: 10px 8px;
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+    font-size: var(--font-18px);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+}
+.container .card .text_area{
+    padding: 0 10px 10px 10px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+.text_area .avatar{
+    text-align: center;
+}
+.text_area .informativo{
+    font-weight: 400;
+    font-size: var(--font-16px);
+    vertical-align: middle;
+    padding: 0;
+}
+.card .comentarios{
+    display: none;
+}
+.card_hidden .comentarios{
+    text-align: justify;
+}
+.text_area .informativo span{
+    font-weight: 600;
+}
+.text_area .premio{
+    font-weight: 550;
+    font-size: var(--font-18px);
+}
+.text_area .categoria{
+    font-weight: 400;
+    font-size: var(--font-16px);
+}
+.text_area hr{
+    width: 90%;
+    margin: 5px 5%;
+}
+.card_hidden{
+    background-color: #dee1fc;
+    border-radius: 5px;
+    border: 1px solid #b3b3b3;
+    display: none;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    z-index: 100;
+}
+.card_hidden .tittle{
+    display: flex;
+    background: var(--first-color-ligth);
+    color: #fff;
+    padding: 10px 8px;
+    font-weight: 500;
+    text-align: center;
+    justify-content: space-between;
+    font-size: var(--font-20px);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+}
+.card_hidden .card .tittle{
+    font-size: var(--font-18px);
+    display: flex;
+    justify-content: space-between;
+}
+.card_hidden .card .tittle{
+    font-size: var(--font-16px);
+    justify-content: center;
+}
+.card_hidden .card .tittle .text_area{
+    align-items: center;
+}
+.card_hidden .text_area{
+    padding: 0 10px 10px 10px;
+}
+.card_hidden .hidden_container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.tittle_toggle{
+    margin: auto 0;
+    cursor: pointer;
+}
+.card_hidden .hidden_container .card{
+    width: calc(100%/3 - 3px);
+    border: 1px solid #b3b3b3;;
+    border-radius: 5px;
+}
+.card_hidden .hidden_container .card .text_area{
+    background-color: #e3e3e3;
+}
+.lower{
+    opacity: 0.1;
+}
+.act_card{
+    display: block;
+}
+/* MEDIA QUERIES */
+@media screen and (max-width: 1050px) {
+    :root{
+        --font-tittle: 60px;
+        --font-32px: 30px;
+        --font-26px: 24px;
+        --font-24px: 22px;
+        --font-22px: 20px;
+        --font-20px: 18px;
+        --font-18px: 16px;
+        --font-16px: 14px;
+    }
+    .container .card{
+        width: calc(100%/2 - 4px);
+    }
+    .card_hidden{
+        width: 60%;
+        left: 20%;
+    }
+}
+@media screen and (max-width: 850px) {
+    :root{
+        --font-tittle: 55px;
+        --font-32px: 28px;
+        --font-26px: 22px;
+        --font-24px: 20px;
+        --font-22px: 18px;
+        --font-20px: 16px;
+        --font-18px: 14px;
+        --font-16px: 11px;
+    }
+    .container_description{
+        width: 98vw;
+    }
+}
+@media screen and (max-width: 700px) {
+    :root{
+        --font-tittle: 45px;
+        --font-32px: 26px;
+        --font-26px: 20px;
+        --font-24px: 18px;
+        --font-22px: 16px;
+        --font-20px: 14px;
+        --font-18px: 13px;
+        --font-16px: 10px;
+    }
+    .card_hidden{
+        width: 70%;
+        left: 15%;
+    }
+}
+@media screen and (max-width: 625px) {
+    :root{
+        --font-tittle: 40px;
+        --font-32px: 20px;
+        --font-26px: 18px;
+        --font-24px: 18px;
+        --font-22px: 16px;
+        --font-20px: 14px;
+        --font-18px: 14px;
+        --font-16px: 12px;
+    }
+    .container_description{
+        width: 95vw;
+    }
+    .container .card{
+        width: calc(100%);
+    }
+    .card_hidden{
+        width: 90%;
+        left: 5%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .card .text_area .avatar{
+        display: none;
+    }
+    .container .card .text_area{
+        padding: 10px;
+    }
+}
+</style>
+<style>
+/* ====== COISAS DA SIDEBAR */
+:root{
+    --header-heigth: 3.5rem;
+    --nav-width: 219px;
+
+    --first-color: #919cff;
+    --first-color-ligth: #111840;
+    --tittle-color: #e3e3e3;
+    --text-color: #F9F6FD;
+    --text-color-ligth: #A5A1AA;
+    --body-color: #F9F6FD;
+    --container-color: #212121;
+    --card-tittle: #22264f;
+    --content-color: #58555E;
+    --tittle-background: #807e7e; 
+    --textarea-background: #fff;
+
+    --body-font: 'Poppins', 'sans-serif';
+    --tittle-font-size: 2.4rem;
+    --bigger-font-size: 1.4rem;
+    --big-font-size: 1.1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .95rem;
+    --smaller-font-size: .85rem;
+
+    --font-medium: 400;
+    --font-semi-bold: 550;
+
+    --z-fixed: 100;
+}
+@media screen and (mind-width: 1024px) {
+    :root{
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .875rem;      
+    }
+}
+*,::before,::after{
+    box-sizing: border-box;
+}
+body{
+    margin: var(--header-heigth) 0 0 0;
+    font-size: var(--normal-font-size);
+    background-color: var(--textarea-background);
+    color: var(--content-color);
+    min-width: 350px;
+}
+h3{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+
+}
+/* ======= HEADER ===========*/
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--container-color);
+    box-shadow: 0 1px 0  rgba(22,8,43,.1);
+    padding: 0 1rem;
+    z-index: 9999;
+}
+.header_container{
+    display: flex;
+    align-items: center;
+    height: var(--header-heigth);
+    justify-content: space-between;
+}
+.header_container span{
+    color: var(--text-color);
+    font-size: var(--bigger-font-size);
+    position: absolute;
+    left: calc(16px + 35px + 20px);
+}
+.header_img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.header_logo{
+    color: var(--tittle-color);
+    font-weight: var(--font-medium);
+    display: none;
+}
+.header_toggle{
+    font-size: 1.2rem;
+    color: var(--tittle-color);
+    cursor: pointer;
+}
+
+/* ======= NAVBAR ===========*/
+.nav{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    padding: 1rem 1rem 3rem;
+    background-color: var(--container-color);
+    box-shadow: 1px 0 0 rgba(22,8,43,.1);
+    z-index: 9999;
+    transition: .4s;
+}
+.nav_container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.nav_container::-webkit-scrollbar{
+    display: none;
+}
+.nav_logo{
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 2.5rem;
+    font-size: 24px;
+}
+.nav_logo span{
+    margin-left: 10px;
+}
+.nav_list, .nav_itens{
+    display: grid;
+
+}
+.nav_list{
+    row-gap: 2.5rem;
+}
+.nav_itens{
+    row-gap: 1.5rem;
+}
+.nav_subtitle{
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: var(--text-color-ligth);
+}
+.nav_link{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+.nav_link:hover{
+    color: var(--first-color);
+}
+.nav_icon{
+    font-size: 1.2rem;
+    margin-right: .5rem;
+}
+.nav_name{
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    white-space: nowrap;
+}
+.nav_developed{
+    margin-top: 5rem;
+}
+
+/* ======= DROPDOWN ===========*/
+.nav_dropwdown{
+    overflow: hidden;
+    max-height: 21px;
+    transition: .4s ease-in-out;
+}
+.nav_dropdown-collapse{
+    background-color: var(--first-color-ligth);
+    border-radius: .25rem;
+    margin-top: 1rem;
+}
+.nav_dropwdown-content{
+    display: grid;
+    row-gap: .5rem;
+    padding: .75rem 2.5rem .75rem 1.8rem;
+}
+.nav_dropdown-item{
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-medium);
+    color: var(--text-color);
+}
+.nav_dropdown-item:hover{
+    color: var(--first-color);
+}
+.nav_dropwdown-icon{
+    margin-left: auto;
+    transition: .4s;
+}
+/* ======= DESOCULTAR COLLAPSE ===========*/
+.show_dropdown{
+    max-height: 100rem;
+}
+/* ======= RODAR SETA ===========*/
+.show_dropdown .nav_dropwdown-icon{
+    transform: rotate(180deg);
+}
+/* ======= MOSTRAR MENU ===========*/
+.show-menu{
+    left: 0;
+}
+
+/* ======= ALTERAÇÕES PARA MENORES ===========*/
+@media screen and(min-width: 768px){
+    body{
+        padding: 1rem 3rem 0 6rem;
+    }
+    .header{
+        padding: 0 3rem 0 6 rem;
+    }
+    .header_container{
+        height: calc(var(--header-height) + .5rem);
+    }
+}
+@media (max-width: 580px){
+    .container{
+        max-width: 100%;
+    }
+    form .details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .card_container .card{
+        width: 100vw;
+    }
+    .details::-webkit-scrollbar{
+        width: 100%;
+    }
+}
+/* COISAS DA SCROLLBAR */
+body{
+    overflow: overlay;
+}
+::-webkit-scrollbar {
+    background: transparent;
+    width: 3px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #292e61;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+/* FOOTER */
+footer{
+    width: 100%;
+    background-color: var(--container-color);
+    color: #fff;
+}
+.footer_header{
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.footer_center{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.footer_header .header_tittle{
+    width: auto;
+    display: inline-block;
+    padding-bottom: 20px;
+    font-size: var(--font-24px);
+}
+.footer_header .btn_hd{
+    display: inline-block;
+    cursor: pointer;
+    background-color: #2e2e2e;
+    padding: 5px;
+    border-radius: 5px;
+    width: 20%;
+    font-size: var(--font-16px);
+}
+.footer_header .btn_hd:hover{
+    background-color: 666666;
+}
+.footer_header .btn_hd i{
+    display: block;
+    margin: 0;
+}
+.footer_header .btn_hd .nav_name{
+    margin: auto;
+}
+.footer_base{
+    font-size: var(--font-16px);
+    padding: 20px;
+    background-color: #292929;
+    text-align: center;
+}
+.footer_base .developed .nav_name, .footer_base .developed .nav_icon{
+    font-size: var(--font-16px);
+}
+@media screen and (max-width: 650px) {
+    .footer_header .btn_hd{
+        width: 30%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .footer_header .btn_hd{
+        width: 31%;
+    }
+}
+
+.pagination{
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.pagination ul{
+    display: flex;
+    list-style-type: none;
+    padding: 8px;
+    background-color: #d6daff;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 0 auto;
+}
+.pagination ul li{
+    list-style: none;
+    line-height: 45px;
+    text-align: center;
+    font-size: var(--font-20px);
+    font-weight: 450;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.pagination ul li i{
+    align-items: center;
+    vertical-align: middle;
+}
+.pagination ul li.numb{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    margin: 0 3px;
+}
+.pagination ul li.dots{
+    font-size: var(--font-22px);
+    margin: 0 3px;
+}
+.pagination ul li.btn{
+    padding: 0 9px;
+}
+.pagination ul li.prev{
+    border-radius: 25px 5px 5px 25px;
+}
+.pagination ul li.next{
+    border-radius: 5px 25px 25px 5px;
+}
+.pagination ul li.ativo,
+.pagination ul li.numb:hover,
+.pagination ul li.btn:hover{
+    background: var(--superior-tittle);
+    color: #fff;
+}
+</style>
+</head>
+<body id="body">
+<header class="header" id="header_pg">
+    <div class="header_container">
+        <img src="https://www.habbo.com.br/habbo-imaging/badge/b09064s43131s50134s17113s171153f3edc7f555be912c2392e285b05bd34.gif" alt="" class="header_img">
+        <a href="" class="header_logo"></a>
+        <span>System INS  </span>
+        <div class="header_toggle">
+            <i class="bx bx-menu" id="header-toggle"></i>
+        </div>
+    </div>
+</header>
+
+<div class="nav" id="navbar">
+    <nav class="nav_container">
+        <a href="#" class="nav_link nav_logo">
+            <i class='bx bx-x'></i>
+            <span>Instrutores</span>
+        </a>
+        <!--NAVBAR PARA LISTAGEM-->
+        <div class="nav_list">
+            <div class="nav_itens">
+                <h3 class="nav_subtitle">Listagens</h3>
+                <a href="https://www.policiarcc.com/h32-ins-listagem-de-membros/ins" class="nav_link">
+                    <i class='bx bx-list-ul nav_icon'></i>
+                    <span class="nav_name">Listagem de Membros</span>
+                </a>
+                <a href="https://www.policiarcc.com/h45-ins-requerimentos-de-membros" class="nav_link">
+                    <i class='bx bx-list-check nav_icon'></i>
+                    <span class="nav_name">Requerimentos</span>
+                </a>
+                <div class="nav_dropwdown">
+                    <a href="#" class="nav_link">
+                        <i class='bx bx-list-ol nav_icon'></i>
+                        <span class="nav_name">Listagens de Subgrupos</span>
+                        <i class='bx bxs-chevron-down nav_icon nav_dropwdown-icon'></i>
+                    </a>
+                    <div class="nav_dropdown-collapse">
+                        <div class="nav_dropwdown-content">
+                            <a href="https://www.policiarcc.com/h32-ins-listagem-de-membros/src" class="nav_dropdown-item">Setor de Relações Comunicativas</a>
+                            <a href="https://www.policiarcc.com/h32-ins-listagem-de-membros/soi" class="nav_dropdown-item">Setor de Orientação dos Instrutores</a>
+                            <a href="https://www.policiarcc.com/h32-ins-listagem-de-membros/ssi" class="nav_dropdown-item">Setor de Segurança dos Instrutores</a>
+                            <a href="https://www.policiarcc.com/h32-ins-listagem-de-membros/apl" class="nav_dropdown-item">Departamento de Aplicação</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://www.policiarcc.com/h40-ins-listagem-de-ex-membros" class="nav_link">
+                    <i class='bx bx-list-check nav_icon'></i>
+                    <span class="nav_name">Listagem de Ex-Membros</span>
+                </a>
+                <a href="https://www.policiarcc.com/h39-ins-membros-de-honra?podio" class="nav_link">
+                    <i class='bx bxs-component nav_icon'></i>
+                    <span class="nav_name">Pódio dos Instrutores</span>
+                </a>
+            </div>
+
+            <!--NAVBAR PARA DOCUMENTOS-->
+            <div class="nav_itens">
+                <h3 class="nav_subtitle">Documentação</h3>
+                <a href="#" class="nav_link">
+                    <i class='bx bx-book-open nav_icon'></i>
+                    <span class="nav_name">Regimento Interno</span>
+                </a>
+                <a href="#" class="nav_link">
+                    <i class='bx bx-no-entry nav_icon'></i>
+                    <span class="nav_name">Código Penal</span>
+                </a>
+                <div class="nav_dropwdown">
+                    <a href="#" class="nav_link">
+                        <i class='bx bx-list-ol nav_icon'></i>
+                        <span class="nav_name">Hall de Destaques</span>
+                        <i class='bx bxs-chevron-down nav_icon nav_dropwdown-icon'></i>
+                    </a>
+                    <div class="nav_dropdown-collapse">
+                        <div class="nav_dropwdown-content">
+                            <a href="https://www.policiarcc.com/h39-ins-membros-de-honra?premi" class="nav_dropdown-item">Premiados em Eventos</a>
+                            <a href="https://www.policiarcc.com/h39-ins-membros-de-honra?votos" class="nav_dropdown-item">Melhor Instrutor do Mês - Votação</a>
+                            <a href="https://www.policiarcc.com/h39-ins-membros-de-honra?destaques" class="nav_dropdown-item">Destaque Mensal - Ranking</a>
+                            <a href="https://www.policiarcc.com/h39-ins-membros-de-honra?ranking" class="nav_dropdown-item">Ranking de Gratificações Internas</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav_dropwdown">
+                    <a href="#" class="nav_link">
+                        <i class='bx bx-history nav_icon'></i>
+                        <span class="nav_name">Histórico dos Instrutores</span>
+                        <i class='bx bxs-chevron-down nav_icon nav_dropwdown-icon'></i>
+                    </a>
+                    <div class="nav_dropdown-collapse">
+                        <div class="nav_dropwdown-content">
+                            <a href="#" class="nav_dropdown-item">Envio de Histórico</a>
+                            <a href="https://www.policiarcc.com/h42-ins-historicos" class="nav_dropdown-item">Conferência dos Históricos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--NAVBAR PARA PROJETOS-->
+            <div class="nav_itens">
+                <h3 class="nav_subtitle">Projetos</h3>
+                <a href="https://www.policiarcc.com/h43-ins-ranking/grat" class="nav_link">
+                    <i class='bx bxs-crown nav_icon'></i>
+                    <span class="nav_name">Ranking de Gratificações Internas</span>
+                </a>
+                <a href="https://www.policiarcc.com/h44-ins-projetos/1" class="nav_link">
+                    <i class='bx bx-message-square-detail nav_icon'></i>
+                    <span class="nav_name">Central de Projetos</span>
+                </a>
+            </div>
+
+            <!--NAVBAR PARA REUNIÕES-->
+            <div class="nav_itens">
+                <h3 class="nav_subtitle">Reuniões</h3>
+                <a href="#" class="nav_link">
+                    <i class='bx bx-mail-send nav_icon'></i>
+                    <span class="nav_name">Atas de Reuniões</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="text_content" id="text_content">
+    <div class="container">
+        <div class="main_tittle" id="hist" style="margin-bottom: 30px;">
+            <div class="tittle_header">
+                <span>PROJETOS & SUGESTÕES</span>
+            </div>
+            <div class="container_description">
+                <div class="tittle_description">A seguir, estão registrados os projetos, em ordem decrescente, enviados pelos membros da companhia dos Instrutores. Para mais informações, clique no projeto de interesse.</div>
+                <div class="pagination">
+                    <ul>
+                    </ul>
+                </div>
+                <div class="card_container" id="container_projetos"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card_hidden" id="card_hidden">
+    <div class="tittle">
+        <div class="tittle_description" id="c_nick"></div>
+        <div class="tittle_toggle" id="btn_close_hid"><i class='bx bx-x-circle'></i></div>
+    </div>
+    <div class="text_area" id="c_info">
+    </div>
+</div>
+
+<footer id="footer_pg">
+    <div class="footer_header">
+        <div class="footer_center">
+            <div class="header_tittle">System INS</div>
+            <div class="header_btn">
+                <div class="btn_hd" id="btn_hd">
+                    <i class='bx bx-chevrons-up nav_icon'></i> 
+                    <span class="nav_name">Início</span>
+                </div>
+                <div class="btn_hd" id="btn_site">
+                    <i class='bx bx-notepad nav_icon'></i>
+                    <span class="nav_name">Site</span>
+                </div>
+                <div class="btn_hd" id="btn_sub">
+                    <i class='bx bx-menu nav_icon'></i>
+                    <span class="nav_name">Subfórum</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_base">
+        <span>Todos os direitos reservados à companhia dos Instrutores de Treinamento.</span>
+        <div class="developed">
+            <i class='bx bx-code-alt nav_icon'></i>
+            <span class="nav_name">Desenvolvido por JoaoVictorS22, BjornBerserker e SenseiBoruto</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://forumeiros.github.io/assets/src/form-generator/form-replace.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+<script>
+var container_projetos = document.getElementById("container_projetos");
+$(document).ready(function load_data(){
+    var page = parseInt(window.location.pathname.split('/')[2]);
+    if(isNaN(page)){window.location.href = 'https://vitorcape.github.io/file/forum/teste/1'; return}
+    var start = parseInt((page - 1) * 33)
+    
+    fetch('https://opensheet.elk.sh/1F4mlgHFmu3-PkQxYvN2LIRHDluMH5m0een8rBRTlbjs/[X]_Projetos')
+    .then(res => res.json())
+    .then(data => {
+        var numPages = Math.ceil(data.length/33);
+        if(page > numPages){window.location.href = 'https://vitorcape.github.io/file/forum/teste/' + numPages; return}
+        if(page < 1){window.location.href = 'https://vitorcape.github.io/file/forum/teste/1'; return}
+        var receive = data.splice(start, 33);
+        fill_Pagination(numPages, page);
+        receive.forEach(row => {
+            container_projetos.innerHTML = container_projetos.innerHTML + 
+                '<div class="card"><div class="tittle">' + row['TIPO'] + ' - ' + row['ENVIO'] + '</div>' +
+                '<div class="text_area"><div class="avatar"><img src="https://www.habbo.com.br/habbo-imaging/avatarimage?user=' + row['AUTOR'] +'&action=std&direction=2&head_direction=3&gesture=sml&size=b"></div><hr class="avatar">' +
+                '<div class="informativo"><span>Responsável:</span> ' + row['AUTOR'] + '</div>' +
+                '<div class="informativo"><span>Ordem:</span> ' + row['ORDEM'] + '</div>' +
+                '<div class="informativo"><span>Tema:</span> ' + row['TEMA'] + '</div><hr>' +
+                '<div class="informativo"><span>Situação:</span> ' + row['SITUAÇÃO'] + '</div>' +
+                '<div class="informativo comentarios"><span>Pontos:</span> ' + row['PONTOS'] + '</div>' +
+                '<div class="informativo comentarios"><span>Comentários:</span> ' + row['COMENTÁRIOS'] + '</div>' +
+                '</div></div>'
+        });
+        add_listener();
+        $("body").css("display", "block");
+    })
+    .catch( err => load_data());
+})
+
+function atualizarURL(){
+    const urlParams = new URLSearchParams(window.location.search).forEach(function(x,y){
+        document.getElementById(y).value = x;
+        if(y == 'select_options'){
+            document.getElementById(x).style.display = 'block';
+        }
+    });    
+}
+
+$("#btn_hd").click(function scrollTop(){
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+})
+$("#btn_site").click(function(){
+    window.open("https://www.instrutores.site/ins-regimento-interno", "_blank")
+})
+$("#btn_sub").click(function(){
+    window.open("https://www.policiarcc.com/f2-instrutores-da-rcc", "_blank")
+})
+</script>
+<script> // SCRIPTS NAVBAR
+/* ======= DESOCULTAR NAVBAR ===========*/
+const showMenu = (headerToggle, navbarId) =>{
+    const toggleBtn = document.getElementById(headerToggle),
+    nav = document.getElementById(navbarId),
+    content = document.getElementById("text_content"),
+    dropdown = document.querySelectorAll('.nav_dropwdown'),
+    header = document.getElementById("header_pg"),
+    footer = document.getElementById("footer_pg"),
+    bd = document.getElementById("body"),
+    nav_btn = document.querySelector('.nav_logo');
+    
+    // Validate that variables exist
+    if(headerToggle && navbarId){
+        document.addEventListener('click', ()=>{
+            var buttonIsClicked = toggleBtn.contains(event.target);
+            var sideBarIsClicked = nav.contains(event.target);
+            var closeIsClicked = nav_btn.contains(event.target);
+            
+            if(buttonIsClicked || closeIsClicked){
+                nav.classList.toggle('show-menu')
+                content.classList.toggle('active')
+                footer.classList.toggle('active')
+                bd.classList.toggle('active_bd')
+                toggleBtn.classList.toggle('hid')
+            }
+            else if(!sideBarIsClicked && $("#text_content").css("opacity") == 0.3){
+                nav.classList.toggle('show-menu')
+                content.classList.toggle('active')
+                footer.classList.toggle('active')
+                bd.classList.toggle('active_bd')
+                toggleBtn.classList.toggle('hid')
+            }
+        })
+        dropdown.forEach(function(element){
+            element.addEventListener('click', () =>{
+                element.classList.toggle('show_dropdown')
+            })
+        });
+    }
+}
+showMenu('header-toggle','navbar');
+
+function add_listener(){
+const content = document.getElementById("text_content"),
+    cards_container = document.querySelectorAll('.card'),
+    btnClose = document.getElementById("btn_close_hid"),
+    footer = document.getElementById("footer_pg"),
+    card_hidden = document.getElementById("card_hidden");
+
+    // ------> CARD OCULTO PARA PREMIAÇÕES
+    document.addEventListener('click', ()=>{
+        var closeIsClicked = btnClose.contains(event.target);
+        var cardIsClicked = card_hidden.contains(event.target);
+        if(closeIsClicked){
+            card_hidden.classList.toggle('act_card');
+            footer.classList.toggle('lower');
+            document.getElementById("text_content").classList.toggle('lower');
+        }
+        if($("#text_content").css("opacity") == 0.1 && !cardIsClicked){
+            document.getElementById("text_content").classList.toggle('lower');
+            footer.classList.toggle('lower');
+            card_hidden.classList.toggle('act_card');
+        }
+        cards_container.forEach(function(element){
+            element.addEventListener('click', () =>{
+                if($("#text_content").css("opacity") != 0.1){
+                    // CALCULA A ALTURA DO CARD
+                    $("#card_hidden").css("top", 75 + window.pageYOffset);
+
+                    // PREENCHIMENTO DO CARD OCULTO
+                    document.getElementById("c_nick").innerHTML = element.querySelector(".tittle").innerHTML;
+                    document.getElementById("c_info").innerHTML = element.querySelector(".text_area").innerHTML;
+
+                    document.getElementById("text_content").classList.toggle('lower');
+                    footer.classList.toggle('lower');
+                    card_hidden.classList.toggle('act_card');
+                }
+            })
+        });
+    })
+}
+</script>
+<script> 
+const ulTag = document.querySelector("ul");
+
+function fill_Pagination(totalPages, page){
+    let liTag = '';
+    let activeLi = '';
+    let beforePages = page - 1;
+    let afterPages = page + 1;
+    let nextPage = page + 1;
+    if(page > 1){
+        liTag += '<li class="btn prev" onclick="openPage(' + beforePages + ')"><span><i class="bx bx-chevrons-left"></i></i></span></li>'
+    }
+
+    if(page > 2){
+        liTag += '<li class="numb" onclick="openPage(1)"><span>1</span></li>';
+        if(page > 3){
+            liTag += '<li class="dots"><span>...</span></li>'
+        }
+    }
+
+    if(page == totalPages){beforePages = beforePages - 2}else if(page == totalPages - 1){beforePages = beforePages - 1}
+    if(page == 1){afterPages = afterPages + 2}else if(page == 2){afterPages = afterPages + 1}
+
+    for(let pageLength = beforePages; pageLength <= afterPages; pageLength++){
+        if(pageLength > totalPages){
+            continue;
+        }
+        if(pageLength == 0){
+            pageLength = pageLength + 1;
+        }
+        if(page == pageLength){activeLi = "ativo"}else{activeLi = ""}
+
+        liTag += '<li class="numb ' + activeLi + '" onclick="openPage(' + pageLength + ')"><span>' + pageLength + '</span></li>';
+    }
+
+    if(page < totalPages - 1){
+        if(page < totalPages - 2){
+            liTag += '<li class="dots"><span>...</span></li>'
+        }
+        liTag += '<li class="numb" onclick="openPage(' + totalPages + ')"><span>' + totalPages + '</span></li>';
+    }
+
+    if(page < totalPages){
+        liTag += '<li class="btn next" onclick="openPage(' + nextPage + ')"><span><i class="bx bx-chevrons-right"></i></span></li>'
+    }
+
+    ulTag.innerHTML = liTag;
+}
+
+//fill_Pagination(5,1);
+
+function openPage(page){
+    window.location.href = 'https://vitorcape.github.io/file/forum/teste/' + page;
+}
+</script>
+</body>
+</html>
