@@ -947,15 +947,15 @@ footer{
 var container_projetos = document.getElementById("container_projetos");
 $(document).ready(function load_data(){
     var page = parseInt(window.location.pathname.split('/')[2]);
-  if(isNaN(page)){window.location.href = 'https://vitorcape.github.io/file/forum/teste/1'; return}
+  if(isNaN(page)){window.location.href = 'https://vitorcape.github.io/file/forum/teste.html/1'; return}
     var start = parseInt((page - 1) * 33)
     
     fetch('https://opensheet.elk.sh/1F4mlgHFmu3-PkQxYvN2LIRHDluMH5m0een8rBRTlbjs/[X]_Projetos')
     .then(res => res.json())
     .then(data => {
         var numPages = Math.ceil(data.length/33);
-        if(page > numPages){window.location.href = 'https://vitorcape.github.io/file/forum/teste/' + numPages; return}
-        if(page < 1){window.location.href = 'https://vitorcape.github.io/file/forum/teste/1'; return}
+        if(page > numPages){window.location.href = 'https://vitorcape.github.io/file/forum/teste.html/' + numPages; return}
+        if(page < 1){window.location.href = 'https://vitorcape.github.io/file/forum/teste.html/1'; return}
         var receive = data.splice(start, 33);
         fill_Pagination(numPages, page);
         receive.forEach(row => {
@@ -1131,7 +1131,7 @@ function fill_Pagination(totalPages, page){
 //fill_Pagination(5,1);
 
 function openPage(page){
-    window.location.href = 'https://vitorcape.github.io/file/forum/teste/' + page;
+    window.location.href = 'https://vitorcape.github.io/file/forum/teste.html/' + page;
 }
 </script>
 </body>
