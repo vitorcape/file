@@ -183,7 +183,7 @@
 
     $(function () {
     function updateData() {
-        var Imagem1 = $("#imagem1").val();
+        var Imagem1 = $("#imagem1").val() || $("#imagem1").attr("placeholder");
         var Nome1 = $("#nome1").val() || $("#nome1").attr("placeholder");
         var Partido1 = $("#partido1").val() || $("#partido1").attr("placeholder");
         var Voto1 = $("#voto1").val() || $("#voto1").attr("placeholder");
@@ -202,7 +202,7 @@
         $("#per1").text(Perc1Arredondado + "%");
         $("#barra1").css("width", Perc1Arredondado + "%");
 
-        var Imagem2 = $("#imagem2").val();
+        var Imagem2 = $("#imagem2").val() || $("#imagem2").attr("placeholder");;
         var Nome2 = $("#nome2").val() || $("#nome2").attr("placeholder");
         var Partido2 = $("#partido2").val() || $("#partido2").attr("placeholder");
         var Voto2 = $("#voto2").val() || $("#voto2").attr("placeholder");
