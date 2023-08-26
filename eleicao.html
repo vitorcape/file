@@ -150,30 +150,29 @@
     'use strict';
 
     $(function () {
-    function updateData() {
-        var novoTitulo = $("#titulo").val() || $("#titulo").attr("placeholder");
-        var novoPercentual = $("#percentual").val() || $("#percentual").attr("placeholder");
-        var novoTotal = $("#voto").val() || $("#voto").attr("placeholder");
-        var novoNulo = $("#nulos").val() || $("#nulos").attr("placeholder");
+        function updateData() {
+            var novoTitulo = $("#titulo").val() || $("#titulo").attr("placeholder");
+            var novoPercentual = $("#percentual").val() || $("#percentual").attr("placeholder");
+            var novoTotal = $("#voto").val() || $("#voto").attr("placeholder");
+            var novoNulo = $("#nulos").val() || $("#nulos").attr("placeholder");
 
-        $("#title").text(novoTitulo);
-        $("#title-percentual").text(novoPercentual + "%");
-        $("#barra-total").css("width", novoPercentual + "%");
-        $("#voto-total").text(novoTotal);
-        $("#voto-nulo").text(novoNulo);
-    }
+            $("#title").text(novoTitulo);
+            $("#title-percentual").text(novoPercentual + "%");
+            $("#barra-total").css("width", novoPercentual + "%");
+            $("#voto-total").text(novoTotal);
+            $("#voto-nulo").text(novoNulo);
+        }
 
-    // Atualizar ao carregar a página
-    updateData();
-
-    // Atualizar enquanto digita nos campos
-    $("#titulo, #title-percentual, #voto, #nulos").keyup(function () {
+        // Atualizar ao carregar a página
         updateData();
+
+        // Atualizar enquanto digita nos campos
+        $("#titulo, #percentual, #voto, #nulos").on("input", function () {
+            updateData();
+        });
     });
-});
-
-
 })(jQuery);
+
 
         </script>
         <script type="text/javascript">
@@ -238,7 +237,7 @@
     updateData();
 
     // Atualizar enquanto digita nos campos
-    $("#imagem2, #nome2, #partido2, #voto2, #barra2").keyup(function () {
+    $("#imagem1, #nome1, #partido1, #voto1, #barra1, #imagem2, #nome2, #partido2, #voto2, #barra2").on("input", function () {
         updateData();
     });
 });
