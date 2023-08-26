@@ -15,7 +15,6 @@
     <style>
         .montserrat{font-family: Montserrat;}
         .poppins{font-family: Poppins;}
-        .img-thumbnail{width: 120px;max-height: 120px;}
     </style>
     <body class="bg-light">
         <main class="container">
@@ -96,7 +95,7 @@
                         </div>
                         <div class="row mb-5" id="candidato1">
                             <div class="col-6 col-sm-2 px-0">
-                                <img src="https://imgur.com/8zLc8op.png" id="image1" alt="" class="img-thumbnail">
+                                <div id="image1" class="img-thumbnail" style="width: 120px; height: 120px;"></div>
                             </div>
                             <div class="col-6 col-sm-10 row">
                                 <div class="col-10 poppins">
@@ -114,7 +113,7 @@
                         </div>
                         <div class="row mb-5" id="candidato2">
                             <div class="col-6 col-sm-2 px-0">
-                                <img src="https://imgur.com/tt3kb32.png" id="image2" alt="" class="img-thumbnail">
+                                <div id="image2" class="img-thumbnail" style="width: 120px; height: 120px;"></div>
                             </div>
                             <div class="col-6 col-sm-10 row">
                                 <div class="col-10 poppins">
@@ -193,7 +192,7 @@
         var Perc1 = (Voto1 * 100) / Valido;
         var Perc1Arredondado = Perc1.toFixed(2);
 
-        $("#img1").attr("src", Imagem1);
+        $("#img1").css("background-image", "url("+Imagem1+");");
         $("#cad-nome1").text(Nome1);
         $("#cad-par1").text(Partido1);
         $("#cad-voto1").text(Voto1 + " votos");
@@ -210,7 +209,7 @@
         var Perc2 = (Voto2 * 100) / Valido;
         var Perc2Arredondado = Perc2.toFixed(2);
 
-        $("#img2").attr("src", Imagem2);
+        $("#img2").css("background-image", "url("+Imagem2+");");
         $("#cad-nome2").text(Nome2);
         $("#cad-par2").text(Partido2);
         $("#cad-voto2").text(Voto2 + " votos");
