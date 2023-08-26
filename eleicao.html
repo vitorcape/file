@@ -66,7 +66,7 @@
                         <h4 class="mt-5 mb-3 text-center poppins">Segundo candidato</h4>
                         <div class="mb-3">
                             <label for="image2" class="form-label">Imagem candidato</label>
-                            <input type="url" class="form-control" id="image2" placeholder="imgur.com">
+                            <input type="url" class="form-control" id="imagem2" placeholder="imgur.com">
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-6">
@@ -95,7 +95,7 @@
                         </div>
                         <div class="row mb-5" id="candidato1">
                             <div class="col-6 col-sm-2 px-0">
-                                <div id="image1" class="img-thumbnail" style="width: 120px; height: 120px;"></div>
+                                <div id="image1" class="img-thumbnail" style="width: 120px; height: 120px; background-image: none;background-size: cover;background-position: center;"></div>
                             </div>
                             <div class="col-6 col-sm-10 row">
                                 <div class="col-10 poppins">
@@ -113,7 +113,7 @@
                         </div>
                         <div class="row mb-5" id="candidato2">
                             <div class="col-6 col-sm-2 px-0">
-                                <div id="image2" class="img-thumbnail" style="width: 120px; height: 120px;"></div>
+                                <div id="image2" class="img-thumbnail" style="width: 120px; height: 120px; background-image: none;background-size: cover;background-position: center;"></div>
                             </div>
                             <div class="col-6 col-sm-10 row">
                                 <div class="col-10 poppins">
@@ -192,7 +192,7 @@
         var Perc1 = (Voto1 * 100) / Valido;
         var Perc1Arredondado = Perc1.toFixed(2);
 
-        $("#img1").css("background-image", "url("+Imagem1+");");
+        $("#image1").css("background-image", "url('" + Imagem1 + "')");
         $("#cad-nome1").text(Nome1);
         $("#cad-par1").text(Partido1);
         $("#cad-voto1").text(Voto1 + " votos");
@@ -209,7 +209,7 @@
         var Perc2 = (Voto2 * 100) / Valido;
         var Perc2Arredondado = Perc2.toFixed(2);
 
-        $("#img2").css("background-image", "url("+Imagem2+");");
+        $("#image2").css("background-image", "url('" + Imagem2 + "')");
         $("#cad-nome2").text(Nome2);
         $("#cad-par2").text(Partido2);
         $("#cad-voto2").text(Voto2 + " votos");
