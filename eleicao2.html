@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="h-100">
+    <head>
+        <title>Gerador apuração</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Vitor Capelli">
+        <link rel="icon" href="https://imgur.com/BbO77qp.png" type="image/png">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://kit.fontawesome.com/7957d4766d.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+        <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet"></link>
+        <link href="https://kit-pro.fontawesome.com/releases/v6.1.1/css/pro.min.css" rel="stylesheet"></link>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+    </head>
+    <style>
+        .montserrat{font-family: Montserrat;}
+        .poppins{font-family: Poppins;}
+    </style>
+    <body class="bg-light">
+        <main class="container">
+            <div class="py-5 text-center montserrat">
+                <img class="roudend mb-3" src="https://imgur.com/BbO77qp.png" height="80" width="80">
+                <h2>PODER CAPITAL</h2>
+                <h4>Gerador apuração de eleição</h4>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <div class="row mb-3">
+                            <h4 class="mt-5 mb-3 text-center poppins">Informações Eleições</h4>
+                            <div class="col-sm-12 mb-3">
+                                <label for="titulo" class="form-label">Nome das eleições</label>
+                                <input type="text" class="form-control" id="titulo" placeholder="Eleições gerais 2006">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="votoTotalEleicoes" class="form-label">Votos totais</label>
+                                <input type="number" class="form-control input-votos" id="votoTotalEleicoes" placeholder="80">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="votoTotalNulo" class="form-label">Votos nulos</label>
+                                <input type="number" class="form-control input-votos" id="votoTotalNulo" placeholder="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h4 class="mt-5 mb-3 text-center poppins">Primeiro candidato</h4>
+                        <div class="mb-3">
+                            <label for="image1" class="form-label">Imagem candidato</label>
+                            <input type="url" class="form-control" id="imagem1URL" placeholder="imgur.com">
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <label for="nome1" class="form-label">Nome candidato</label>
+                                <input type="text" class="form-control" id="nome1" placeholder="Vitor Capelli">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="partido1" class="form-label">Partido</label>
+                                <input type="text" class="form-control" id="partido1" placeholder="PT ou PT/PDT">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="votoTotalCandidato1" class="form-label">Quantidade de votos</label>
+                            <input type="number" class="form-control input-votos" id="votoTotalCandidato1" placeholder="25">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h4 class="mt-5 mb-3 text-center poppins">Segundo candidato</h4>
+                        <div class="mb-3">
+                            <label for="image2" class="form-label">Imagem candidato</label>
+                            <input type="url" class="form-control" id="imagem2URL" placeholder="imgur.com">
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <label for="nome2" class="form-label">Nome candidato</label>
+                                <input type="text" class="form-control" id="nome2" placeholder="Amarildo do Hospital">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="partido2" class="form-label">Partido</label>
+                                <input type="text" class="form-control" id="partido2" placeholder="PL ou PL/MDB">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="votoTotalCandidato2" class="form-label">Quantidade de votos</label>
+                            <input type="number" class="form-control input-votos" id="votoTotalCandidato2" placeholder="18">
+                        </div>
+                    </div>
+                    <div class="alert alert-warning text-center mt-5 poppins" role="alert">
+                        <i class="fa-sharp fa-solid fa-circle-exclamation"></i> Verifique corretamente se os valores estão compatíveis. Para gerar outro insira novamente.
+                    </div>
+                    <div class="text-center poppins">
+                        <p>Desenvolvido <i class="fa-regular fa-code"></i> por Vitor Capelli</p>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <div class="row">
+                <div class="col-6 mb-4">
+                    <div class="card p-4 text-left" id="print1">
+                        <div id="apuracao" class="mb-3">
+                            <h3 class="text-uppercase mb-4 montserrat title"></h3>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><b id="title-percentual">25%</b> das urnas apuradas</p>
+                        </div>
+                        <div class="row mb-5" id="Cad125">
+                            <div class="col-6 col-sm-2 px-0">
+                                <div id="image1" class="img-thumbnail Cad1Img" style="width: 120px; height: 120px; background-image: url(https://imgur.com/8zLc8op);background-size: cover;background-position: center;"></div>
+                            </div>
+                            <div class="col-6 col-sm-10 row">
+                                <div class="col-10 poppins">
+                                    <h3 class="cad-nome1"></h3>
+                                    <p class="cad-par1">PT/PDT</p>
+                                </div>
+                                <div class="col-2 text-center poppins">
+                                    <h4 id="Cad1Perc25">50,90%</h4>
+                                    <p id="Cad1Voto25">25 votos</p>
+                                </div>
+                                <div class="progress mx-2 px-0" style="height: 5px">
+                                    <div class="progress-bar" id="Cad1Barra25" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-5" id="Cad225">
+                            <div class="col-6 col-sm-2 px-0">
+                                <div id="image2" class="img-thumbnail Cad2Img" style="width: 120px; height: 120px; background-image: url(https://imgur.com/tt3kb32);background-size: cover;background-position: center;"></div>
+                            </div>
+                            <div class="col-6 col-sm-10 row">
+                                <div class="col-10 poppins">
+                                    <h3 class="cad-nome2"></h3>
+                                    <p class="cad-par2">PL/MDB</p>
+                                </div>
+                                <div class="col-2 text-center poppins">
+                                    <h4 id="Cad2Perc25">49,10%</h4>
+                                    <p id="Cad2Voto25">15 votos</p>
+                                </div>
+                                <div class="progress mx-2 px-0" style="height: 5px">
+                                    <div class="progress-bar" id="Cad2Barra25" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" mt-3">
+                            <div class="m-0 p-0">Votos totais: <b id="VotoTotal25">40</b></div>
+                            <div class="m-0 p-0">Votos brancos/nulos: <b id="VotoNulo25">10</b></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mb-4">
+                    <div class="card p-4 text-left" id="print2">
+                        <div id="apuracao" class="mb-3">
+                            <h3 class="text-uppercase mb-4 montserrat title"></h3>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><b id="title-percentual">50%</b> das urnas apuradas</p>
+                        </div>
+                        <div class="row mb-5" id="Cad150">
+                            <div class="col-6 col-sm-2 px-0">
+                                <div id="image1" class="img-thumbnail Cad1Img" style="width: 120px; height: 120px; background-image: url(https://imgur.com/8zLc8op);background-size: cover;background-position: center;"></div>
+                            </div>
+                            <div class="col-6 col-sm-10 row">
+                                <div class="col-10 poppins">
+                                    <h3 class="cad-nome1"></h3>
+                                    <p class="cad-par1">PT/PDT</p>
+                                </div>
+                                <div class="col-2 text-center poppins">
+                                    <h4 id="Cad1Perc50">50,90%</h4>
+                                    <p id="Cad1Voto50">25 votos</p>
+                                </div>
+                                <div class="progress mx-2 px-0" style="height: 5px">
+                                    <div class="progress-bar" id="Cad1Barra50" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-5" id="Cad250">
+                            <div class="col-6 col-sm-2 px-0">
+                                <div id="image2" class="img-thumbnail Cad2Img" style="width: 120px; height: 120px; background-image: url(https://imgur.com/tt3kb32);background-size: cover;background-position: center;"></div>
+                            </div>
+                            <div class="col-6 col-sm-10 row">
+                                <div class="col-10 poppins">
+                                    <h3 class="cad-nome2"></h3>
+                                    <p class="cad-par2">PL/MDB</p>
+                                </div>
+                                <div class="col-2 text-center poppins">
+                                    <h4 id="Cad2Perc50">49,10%</h4>
+                                    <p id="Cad2Voto50">15 votos</p>
+                                </div>
+                                <div class="progress mx-2 px-0" style="height: 5px">
+                                    <div class="progress-bar" id="Cad2Barra50" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" mt-3">
+                            <div class="m-0 p-0">Votos totais: <b id="VotoTotal50">40</b></div>
+                            <div class="m-0 p-0">Votos brancos/nulos: <b id="VotoNulo50">10</b></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mb-4">
+                    <div class="card p-4 text-left" id="print3">
+                        <div id="apuracao" class="mb-3">
+                            <h3 class="text-uppercase mb-4 montserrat title"></h3>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><b id="title-percentual">75%</b> das urnas apuradas</p>
+                        </div>
+                        <div class="row mb-5" id="Cad175">
+                            <div class="col-6 col-sm-2 px-0">
+                                <div id="image1" class="img-thumbnail Cad1Img" style="width: 120px; height: 120px; background-image: url(https://imgur.com/8zLc8op);background-size: cover;background-position: center;"></div>
+                            </div>
+                            <div class="col-6 col-sm-10 row">
+                                <div class="col-10 poppins">
+                                    <h3 class="cad-nome1"></h3>
+                                    <p class="cad-par1">PT/PDT</p>
+                                </div>
+                                <div class="col-2 text-center poppins">
+                                    <h4 id="Cad1Perc75">50,90%</h4>
+                                    <p id="Cad1Voto75">25 votos</p>
+                                </div>
+                                <div class="progress mx-2 px-0" style="height: 5px">
+                                    <div class="progress-bar" id="Cad1Barra75" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-5" id="Cad275">
+                            <div class="col-6 col-sm-2 px-0">
+                                <div id="image2" class="img-thumbnail Cad2Img" style="width: 120px; height: 120px; background-image: url(https://imgur.com/tt3kb32);background-size: cover;background-position: center;"></div>
+                            </div>
+                            <div class="col-6 col-sm-10 row">
+                                <div class="col-10 poppins">
+                                    <h3 class="cad-nome2"></h3>
+                                    <p class="cad-par2">PL/MDB</p>
+                                </div>
+                                <div class="col-2 text-center poppins">
+                                    <h4 id="Cad2Perc75">49,10%</h4>
+                                    <p id="Cad2Voto75">15 votos</p>
+                                </div>
+                                <div class="progress mx-2 px-0" style="height: 5px">
+                                    <div class="progress-bar" id="Cad2Barra75" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" mt-3">
+                            <div class="m-0 p-0">Votos totais: <b id="VotoTotal75">40</b></div>
+                            <div class="m-0 p-0">Votos brancos/nulos: <b id="VotoNulo75">10</b></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mb-4">
+                    <div class="card p-4 text-left" id="print4">
+                        <div id="apuracao" class="mb-3">
+                            <h3 class="text-uppercase mb-4 montserrat title"></h3>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><b id="title-percentual">100%</b> das urnas apuradas</p>
+                        </div>
+                        <div class="row mb-5" id="Cad1100">
+                            <div class="col-6 col-sm-2 px-0">
+                                <div id="image1" class="img-thumbnail Cad1Img" style="width: 120px; height: 120px; background-image: url(https://imgur.com/8zLc8op);background-size: cover;background-position: center;"></div>
+                            </div>
+                            <div class="col-6 col-sm-10 row">
+                                <div class="col-10 poppins">
+                                    <h3 class="cad-nome1"></h3>
+                                    <p class="cad-par1">PT/PDT</p>
+                                </div>
+                                <div class="col-2 text-center poppins">
+                                    <h4 id="Cad1Perc100">50,90%</h4>
+                                    <p id="Cad1Voto100">25 votos</p>
+                                </div>
+                                <div class="progress mx-2 px-0" style="height: 5px">
+                                    <div class="progress-bar" id="Cad1Barra100" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-5" id="Cad2100">
+                            <div class="col-6 col-sm-2 px-0">
+                                <div id="image2" class="img-thumbnail Cad2Img" style="width: 120px; height: 120px; background-image: url(https://imgur.com/tt3kb32);background-size: cover;background-position: center;"></div>
+                            </div>
+                            <div class="col-6 col-sm-10 row">
+                                <div class="col-10 poppins">
+                                    <h3 class="cad-nome2"></h3>
+                                    <p class="cad-par2">PL/MDB</p>
+                                </div>
+                                <div class="col-2 text-center poppins">
+                                    <h4 id="Cad2Perc100">49,10%</h4>
+                                    <p id="Cad2Voto100">15 votos</p>
+                                </div>
+                                <div class="progress mx-2 px-0" style="height: 5px">
+                                    <div class="progress-bar" id="Cad2Barra100" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" mt-3">
+                            <div class="m-0 p-0">Votos totais: <b id="VotoTotal100">40</b></div>
+                            <div class="m-0 p-0">Votos brancos/nulos: <b id="VotoNulo100">10</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 my-5 pb-5 poppins">
+                <button class="btn btn-dark" type="button" id="captureButton">Criar imagem</button>
+            </div>
+        </main>
+        <script>
+            (function($) {
+    'use strict';
+
+    $(function () {
+        function updateData() {
+            var novoTitulo = $("#titulo").val() || $("#titulo").attr("placeholder");
+            var nomeCad1 = $("#nome1").val() || $("#nome1").attr("placeholder");
+            var nomeCad2 = $("#nome2").val() || $("#nome2").attr("placeholder");
+            var parCad1 = $("#partido1").val() || $("#partido1").attr("placeholder");
+            var parCad2 = $("#partido2").val() || $("#partido2").attr("placeholder");
+            var Imagem1 = $("#imagem1URL").val() || $("#imagem1URL").attr("placeholder");
+            var Imagem2 = $("#imagem2URL").val() || $("#imagem2URL").attr("placeholder");
+
+            $(".title").text(novoTitulo);
+            $(".cad-nome1").text(nomeCad1);
+            $(".cad-nome2").text(nomeCad2);
+            $(".cad-par1").text(parCad1);
+            $(".cad-par2").text(parCad2);
+            $(".Cad1Img").css("background-image", "url('" + Imagem1 + "')");
+            $(".Cad2Img").css("background-image", "url('" + Imagem2 + "')");
+        }
+
+        // Atualizar ao carregar a página
+        updateData();
+
+        // Atualizar enquanto digita nos campos
+        $("#titulo, #nome1, #nome2, #partido1, #partido2, #imagem1URL, #imagem2URL").on("input", function () {
+            updateData();
+        });
+    });
+})(jQuery);
+        </script>
+        <script>
+            $(document).ready(function() {
+            function atualizarResultados() {
+                var votoTotalEleicoes = parseInt($("#votoTotalEleicoes").val());
+                var votoTotalCandidato1 = parseInt($("#votoTotalCandidato1").val());
+                var votoTotalCandidato2 = parseInt($("#votoTotalCandidato2").val());
+                var votoTotalNulo = parseInt($("#votoTotalNulo").val());
+                
+                var parte25 = Math.floor(votoTotalEleicoes * 0.25);
+                var parte50 = Math.floor(votoTotalEleicoes * 0.5);
+                var parte75 = Math.floor(votoTotalEleicoes * 0.75);
+                
+                var votoParcialCandidato1_25 = Math.floor(Math.random() * (parte25/2 + 2));
+                var votoParcialNulo_25 = votoTotalNulo - 6;
+                votoParcialNulo_25 = Math.max(votoParcialNulo_25, 0);
+                var votoParcialCandidato2_25 = parte25 - votoParcialNulo_25 - votoParcialCandidato1_25;
+                var votoValido_25 = parte25 - votoParcialNulo_25;
+                var perCandidato1_25 = (votoParcialCandidato1_25 * 100)/votoValido_25;
+                perCandidato1_25 = perCandidato1_25.toFixed(0);
+                var perCandidato2_25 = (votoParcialCandidato2_25 * 100)/votoValido_25;
+                perCandidato2_25 = perCandidato2_25.toFixed(0);
+
+                var votoParcialCandidato1_50 = Math.floor(Math.random() * (parte50 / 2 + 1)) + votoParcialCandidato1_25;
+                var votoParcialNulo_50 = votoTotalNulo - 4;
+                var votoParcialCandidato2_50 = parte50 - votoParcialCandidato1_50 - votoParcialNulo_50;
+                var votoValido_50 = parte50 - votoParcialNulo_50;
+                var perCandidato1_50 = (votoParcialCandidato1_50 * 100)/votoValido_50;
+                perCandidato1_50 = perCandidato1_50.toFixed(0);
+                var perCandidato2_50 = (votoParcialCandidato2_50 * 100)/votoValido_50;
+                perCandidato2_50 = perCandidato2_50.toFixed(0);
+
+                var votoParcialCandidato2_75 = Math.floor(Math.random() * (parte25 + 1)) + votoParcialCandidato2_50;
+                votoParcialNulo_75 = votoTotalNulo - 1;
+                var votoParcialCandidato1_75 = parte75 - votoParcialCandidato2_75 - votoParcialNulo_75;
+                var votoValido_75 = parte75 - votoParcialNulo_75;
+                var perCandidato1_75 = (votoParcialCandidato1_75 * 100)/votoValido_75;
+                perCandidato1_75 = perCandidato1_75.toFixed(0);
+                var perCandidato2_75 = (votoParcialCandidato2_75 * 100)/votoValido_75;
+                perCandidato2_75 = perCandidato2_75.toFixed(0);
+
+                var votoTotalCandidato1_100 = votoTotalCandidato1;
+                var votoTotalCandidato2_100 = votoTotalCandidato2;
+                var votoTotalNulo_100 = votoTotalNulo;
+                var votoValido_100 = votoTotalEleicoes - votoTotalNulo;
+                var perCandidato1_100 = (votoTotalCandidato1_100 * 100)/votoValido_100;
+                perCandidato1_100 = perCandidato1_100.toFixed(0);
+                var perCandidato2_100 = (votoTotalCandidato2_100 * 100)/votoValido_100;
+                perCandidato2_100 = perCandidato2_100.toFixed(0);
+
+                $("#Cad1Voto25").text(votoParcialCandidato1_25 + " votos");
+                $("#Cad2Voto25").text(votoParcialCandidato2_25 + " votos");
+                $("#VotoNulo25").text(votoParcialNulo_25);
+                $("#VotoTotal25").text(parte25);
+                $("#Cad1Perc25").text(perCandidato1_25 + "%");
+                $("#Cad2Perc25").text(perCandidato2_25 + "%");
+                $("#Cad1Barra25").css("width",perCandidato1_25 + "%");
+                $("#Cad2Barra25").css("width",perCandidato2_25 + "%");
+
+                $("#Cad1Voto50").text(votoParcialCandidato1_50 + " votos");
+                $("#Cad2Voto50").text(votoParcialCandidato2_50 + " votos");
+                $("#VotoNulo50").text(votoParcialNulo_50);
+                $("#VotoTotal50").text(parte50);
+                $("#Cad1Perc50").text(perCandidato1_50 + "%");
+                $("#Cad2Perc50").text(perCandidato2_50 + "%");
+                $("#Cad1Barra50").css("width",perCandidato1_50 + "%");
+                $("#Cad2Barra50").css("width",perCandidato2_50 + "%");
+
+                $("#Cad1Voto75").text(votoParcialCandidato1_75 + " votos");
+                $("#Cad2Voto75").text(votoParcialCandidato2_75 + " votos");
+                $("#VotoNulo75").text(votoParcialNulo_75);
+                $("#VotoTotal75").text(parte75);
+                $("#Cad1Perc75").text(perCandidato1_75 + "%");
+                $("#Cad2Perc75").text(perCandidato2_75 + "%");
+                $("#Cad1Barra75").css("width",perCandidato1_75 + "%");
+                $("#Cad2Barra75").css("width",perCandidato2_75 + "%");
+
+                $("#Cad1Voto100").text(votoTotalCandidato1_100 + " votos");
+                $("#Cad2Voto100").text(votoTotalCandidato2_100 + " votos");
+                $("#VotoNulo100").text(votoTotalNulo);
+                $("#VotoTotal100").text(votoTotalEleicoes);
+                $("#Cad1Perc100").text(perCandidato1_100 + "%");
+                $("#Cad2Perc100").text(perCandidato2_100 + "%");
+                $("#Cad1Barra100").css("width",perCandidato1_100 + "%");
+                $("#Cad2Barra100").css("width",perCandidato2_100 + "%");
+            }
+
+            $(".input-votos").on("input", function() {
+                atualizarResultados();
+            });
+
+            atualizarResultados();
+        });
+        </script>
+        <script>
+            $(document).ready(function() {
+                function updateVotes() {
+                    var Cad2Voto25 = parseInt($("#Cad2Voto25").text().split(" ")[0]);
+                    var Cad1Voto25 = parseInt($("#Cad1Voto25").text().split(" ")[0]);
+                    var Cad2Voto50 = parseInt($("#Cad2Voto50").text().split(" ")[0]);
+                    var Cad1Voto50 = parseInt($("#Cad1Voto50").text().split(" ")[0]);
+                    var Cad2Voto75 = parseInt($("#Cad2Voto75").text().split(" ")[0]);
+                    var Cad1Voto75 = parseInt($("#Cad1Voto75").text().split(" ")[0]);
+                    var Cad2Voto100 = parseInt($("#Cad2Voto100").text().split(" ")[0]);
+                    var Cad1Voto100 = parseInt($("#Cad1Voto100").text().split(" ")[0]);
+        
+                    // Compare the values and update accordingly
+                    if (Cad2Voto25 > Cad1Voto25) {
+                        $("#Cad225").insertBefore("#Cad125");
+                        $("#Cad2Barra25").addClass("bg-success").removeClass("bg-secondary");
+                        $("#Cad1Barra25").addClass("bg-secondary").removeClass("bg-success");
+                    } else {
+                        $("#Cad125").insertBefore("#Cad225");
+                        $("#Cad2Barra25").addClass("bg-secondary").removeClass("bg-success");
+                        $("#Cad1Barra25").addClass("bg-success").removeClass("bg-secondary");
+                    }
+
+                    if (Cad2Voto50 > Cad1Voto50) {
+                        $("#Cad250").insertBefore("#Cad150");
+                        $("#Cad2Barra50").addClass("bg-success").removeClass("bg-secondary");
+                        $("#Cad1Barra50").addClass("bg-secondary").removeClass("bg-success");
+                    } else {
+                        $("#Cad150").insertBefore("#Cad250");
+                        $("#Cad2Barra50").addClass("bg-secondary").removeClass("bg-success");
+                        $("#Cad1Barra50").addClass("bg-success").removeClass("bg-secondary");
+                    }
+
+                    if (Cad2Voto75 > Cad1Voto75) {
+                        $("#Cad275").insertBefore("#Cad175");
+                        $("#Cad2Barra75").addClass("bg-success").removeClass("bg-secondary");
+                        $("#Cad1Barra75").addClass("bg-secondary").removeClass("bg-success");
+                    } else {
+                        $("#Cad175").insertBefore("#Cad275");
+                        $("#Cad2Barra75").addClass("bg-secondary").removeClass("bg-success");
+                        $("#Cad1Barra75").addClass("bg-success").removeClass("bg-secondary");
+                    }
+
+                    if (Cad2Voto100 > Cad1Voto100) {
+                        $("#Cad2100").insertBefore("#Cad1100");
+                        $("#Cad2Barra100").addClass("bg-success").removeClass("bg-secondary");
+                        $("#Cad1Barra100").addClass("bg-secondary").removeClass("bg-success");
+                    } else {
+                        $("#Cad1100").insertBefore("#Cad2100");
+                        $("#Cad2Barra100").addClass("bg-secondary").removeClass("bg-success");
+                        $("#Cad1Barra100").addClass("bg-success").removeClass("bg-secondary");
+                    }
+                }
+                setInterval(updateVotes, 1000);
+            });
+        </script>
+        <script>
+            $("#captureButton").click(function() {
+    captureAndAppendImage($("#print1"));
+    captureAndAppendImage($("#print2"));
+    captureAndAppendImage($("#print3"));
+    captureAndAppendImage($("#print4"));
+});
+
+function captureAndAppendImage(targetElement) {
+    html2canvas(targetElement.get(0), {
+        allowTaint: true,
+        backgroundColor: null,
+        imageTimeout: 0,
+        scale: 1
+    })
+    .then(function (canvas) {
+        if (targetElement.has("canvas")) {
+            targetElement.find("canvas").remove();
+        }
+        targetElement.append(canvas);
+    })
+    .catch(function (err) {
+        console.log(err);
+    });
+}
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+    </body>
+</html>
