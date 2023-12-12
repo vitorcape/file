@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="company" content="Centro Militar Investigativo">
+    <meta name="author" content="vcapelli">
+    <script src="https://kit.fontawesome.com/7957d4766d.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://imgur.com/TpVUAp7.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>CMI: Procurar policial</title>
+    <script type="text/css" name="publi_css">
+        /* Set here the CSS of the publi page */
+       
+        header, #header-banner, .page-header, form[name*="jumpbox"], .footer {
+          display: none!important;
+        }
+        body{
+            border: 1px solid #dee2e6!important;
+        }
+    </script>
+    <style>
+        body{
+            font-family: Poppins;
+        }
+        .col-md-10{
+            border-radius: .35em;
+        }
+        iframe{
+            width: 100%;
+            height: 400px;
+            margin-top: 1em;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-md-10 border p-3 px-4 shadow-sm">
+                <h2 class="mb-3">Procurar policial</h2>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" class="form-control" id="query" value="" placeholder="Usuário">
+                </div>
+                <iframe onload="setPubliFormat();" src="https://vitorcape.github.io/file/search_iframe.html"></iframe>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.form-control').keypress(function (e) {
+            if (e.keyCode === 13) {
+                myFunction( $('.form-control').val() );
+                return false;
+            }
+            return true;
+        });
+        
+        myFunction = function (term) {
+            $('iframe').attr('src', '/search?search_keywords=' + term + '&sid=&q=&domains=sistema-forum.forumeiros.com&sitesearch=sistema-forum.forumeiros.com&client=&forid=1&ie=utf-8&oe=utf-8&hl=pt&cof=GALT%3A%233e464c%3BGL%3A1%3BDIV%3A%23ebeadd%3BVLC%3A%233e464c%3BAH%3Acenter%3BBGC%3A%23ffffff%3BLBGC%3A%23ebeadd%3BALC%3A%23368ad2%3BLC%3A%233e464c%3BT%3A%23444444%3BGFNT%3A%233e464c%3BGIMP%3A%233e464c%3BFORID%3A11&search_terms=any&search_author=&search_where=-1&search_time=0&show_results=posts&sort_by=0&sort_dir=DESC&google=');
+        }
+    </script>
+    <script type="text/javascript">
+        //<![CDATA[
+        function setPubliFormat() {
+          var win = document.querySelector('iframe').contentWindow,
+              css = document.querySelector('script[name="publi_css"]'),
+              h = win.document.querySelector('head'),
+              style = win.document.createElement('STYLE');
+          // Append the CSS inside the iframe
+          style.innerText = css.innerText;
+          h.append(style);
+          // Back to forum when the return link is clicked
+          win.document.querySelectorAll('a').forEach(function(element) {
+            if (element.href && !element.href.match(/publi/)) {
+              element.onclick = function() {
+                var href = element.href, parser = document.createElement('a');
+                element.href = ""; parser.href = href;
+                parser.click();
+              }
+            }
+          });
+        }
+        //]]>
+    </script>
+    <script>
+        function showPopUp() {
+    var cookie = $.cookie('the_cookie');
+    if(!cookie){
+        Swal.fire({
+          icon: 'question',
+          title: 'Sistema de busca',
+          html: 'Digite o nick do usuário na barra',
+          showConfirmButton: false,
+          timer: 3500
+        })
+        $.cookie('the_cookie', 'the_value');
+    }
+}
+showPopUp();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
